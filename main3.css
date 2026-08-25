@@ -1,0 +1,254 @@
+  *{
+    margin: 0;
+    padding: 0;
+     scroll-behavior: smooth; 
+    }
+
+                                                  /* BAGIAN ATAS */
+.navbar2{
+        display: flex;
+        background-color: #233D4D;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 60px;
+    }
+
+    .menu ul{
+        display: flex;
+        gap: 10px;
+    }
+
+     .navbar2 h1{
+        font-weight: bold;
+        font-size: 24px;
+        color: white;
+    
+    }
+
+     .menu ul li a{
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        transition:0.5s ;
+    }
+
+    .menu ul li a:hover{
+        background-color: white;
+        color: #233D4D;
+        transform: translateY(-3px);
+        padding:10px 20px ;
+        border-radius:30% ;
+
+    }
+
+     .menu ul li{
+        list-style: none;
+    }
+
+    .nav-button a{
+        color: #233D4D;
+        background-color: white;
+        padding: 10px 20px;
+        border: 1px solid #233D4D;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+     .nav-button a:hover{
+        background-color: #007979;
+        border: 2px solid white;
+        transform: translateY(-3px);
+        color: whitesmoke;
+    }
+
+    .body{
+        background-color: aquamarine;
+        text-align: center;
+    }
+    
+     a{
+         color: #0F3040;
+        background-color: #007979;
+        border-radius: 15px;
+        border: whitesmoke;
+        padding: 15px;
+        display: inline-block;
+        margin: 20px;
+        transition: 0.5s; 
+
+    }
+
+                                             /* BAGIAN ABOUTME */
+    .aboutme{
+        background-color: #0F3040;
+    }
+
+     .aboutme-1{
+        color: red;
+        background-color: white;
+    }
+
+    .aboutme-2{
+        color:white ;
+        background-color: black;
+    }
+
+    .aboutme{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 40px 80px;
+    
+
+   
+}
+
+    .aboutme h1{
+        font-size: 50px;
+        
+
+    }
+
+   .aboutme p{
+    width:600px;
+    background-color: #215B63;
+    border:none;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+    border:3px solid #FF9A00;
+    padding: 10px 20px;
+
+    margin-top: 20px;
+}
+    
+   .about-text{
+        text-align: start;
+        align-items: center;
+    }
+
+   
+
+
+    .about-image img{
+        width: 300px;
+    }
+
+   /* ANIMASI ABOUT ME */
+.aboutme h1{
+    color: #007979;
+    transition: 0.5s ease;
+}
+
+.aboutme h1:hover{
+    color: #FF9A00;
+  
+}
+
+
+/* KOTAK BAGIAN ABOUT ME */
+.aboutme h1{
+    color: #E37434;
+    border: 3px solid #007979;
+    border-radius: 15px;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: 0.5s ease;
+}
+
+.aboutme h1:hover{
+    color: #FF9A00;
+    border-color: #FF9A00;
+    
+}
+
+
+/* GAMBAR ABOUT ME */
+.about-image{
+    width: 35%;
+    text-align: center;
+}
+
+.about-image img{
+    width: 300px;
+    border: 5px solid #007979;
+    border-radius: 20px;
+    transition: 0.5s ease;
+}
+
+.about-image img:hover{
+    transform: scale(1.08) rotate(2deg);
+    border-color: #FF9A00;
+    box-shadow: 0 0 25px #FF9A00;
+}
+
+                                                /* BAGIAN SKILL */
+.skills{
+    background-color: #0F3040;
+}
+
+#skills > h2{
+    font-size: 50px;
+    color: black;
+    margin-top: 20px;
+}
+
+.skills-container{
+    display:flex;
+    justify-content: center;
+    gap: 50px;
+    
+}
+
+.skill-card{
+    width: 300px;
+    background-color: #44A1A4;
+border: solid #FF9A00;
+padding: 20px;
+margin: 50px auto;
+border-radius: 10px;
+box-shadow: 0px 15px #FF9A00;
+transition: 0.8s;
+
+
+}
+
+.skill-card h2{
+    color: whitesmoke;
+    font-family: 22px;
+    
+}
+
+.skill-card p{
+    background:none ;
+    border: none;
+    
+}
+
+.skill-card:hover{
+    background-color: #67C090;
+    border: solid #215B63;
+    box-shadow: 0px 15px #215B63;
+    transform: translateY(-10px) translateX(10px);
+}
+.html{
+    width: 90%;
+    height: 100%;
+    background-color: red;
+
+}
+
+.css{
+    width: 90%;
+    height: 100%;
+    background-color: red;
+    
+}
+
+.js{
+    width: 90%;
+    height: 100%;
+    background-color: red;
+}

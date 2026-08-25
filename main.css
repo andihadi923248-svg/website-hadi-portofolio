@@ -1,0 +1,392 @@
+ *{
+    margin: 0;
+    padding: 0;
+     scroll-behavior: smooth; 
+ }
+
+                                      /* BAGIAN BADANNYA */
+
+    /* h1-1{
+          color:#FFE2AF;background-color: #E37434;
+        width: 200px;
+        border: 5px solid greenyellow;
+         border-radius: 20px;
+         margin: auto;
+          transition:  0.9s ease;   
+    }    */
+
+      .alamat{
+        color: #FEF2A0;
+        background-color: #E98B50;
+        width: 200px;
+        border: 5px solid #BC4F4F;
+        border-radius: 20px;
+        margin: auto;
+        transition: 0.3s;
+    } 
+
+    p{
+        color: #524646;background-color: #A8A492;
+        width: 200px;
+         border: 5px solid red;
+          border-radius: 20px;
+          margin: auto;
+          transition:  0.9s ease;
+    }
+
+    img{
+        width: 200px;
+         border: 5px solid orange;
+        border-radius: 20px;
+        transition:  0.9s ease;
+    }
+
+    a{
+         color: #0F3040;
+        background-color: #007979;
+        border-radius: 15px;
+        border: whitesmoke;
+        padding: 15px;
+        display: inline-block;
+        margin: 20px;
+        transition: 0.5s; 
+
+    }
+    
+
+    body{
+        background-color: #0F3040;
+        text-align: center;
+        
+    }
+
+    h1:hover{
+        color: #007979;
+        background-color: #24B1B1;
+    }
+
+    p:hover{
+        color: #BD4444;
+        background-color: #F1DEC4;
+    }
+
+    img:hover{
+        width: 300px;
+        
+    }
+
+    a:hover{
+        color: #44A1A4;
+        background-color: #FF9A00;
+    }
+
+    .alamat{
+        background-color: #E9C46A;
+        color: #249D8F;
+    }
+
+    .Lorem{
+        background-color: #FFF449;
+        color: #FED24F;
+    }
+
+    .Lorem:hover{
+        background-color: #E37434;
+    }
+
+    .alamat:hover{
+        background-color: #FFC349;
+        color: #525EA7;
+    }
+
+                                         /* BAGIAN ABOUTME */
+    .aboutme-1{
+        color: red;
+        background-color: white;
+    }
+
+    .aboutme-2{
+        color:white ;
+        background-color: black;
+    }
+
+                                          /* BAGIAN BADANNYA */
+    .hero h1{
+        color: #007979;
+        
+    }
+
+                                            /* BAGIAN ATAS */
+    .navbar{
+        display: flex;
+        background-color: salmon;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 60px;
+    }
+
+    .menu ul{
+        display: flex;
+        gap: 10px;
+    }
+
+    .navbar h1{
+        font-weight: bold;
+        font-size: 24px;
+        color: white;
+    
+    }
+
+    .menu ul li a{
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        transition:0.5s ;
+    }
+
+    .menu ul li a:hover{
+        background-color: white;
+        color: salmon;
+        transform: translateY(-3px);
+        padding:10px 20px ;
+        border-radius:30% ;
+
+    }
+
+    .menu ul li{
+        list-style: none;
+    }
+
+    .nav-button a{
+        color: salmon;
+        background-color: white;
+        padding: 10px 20px;
+        border: 1px solid pink;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .nav-button a:hover{
+        background-color: salmon;
+        border: 2px solid white;
+        transform: translateY(-3px);
+        color: whitesmoke;
+    }
+
+                                         /* BAGIAN ABOUTME */
+    .aboutme{
+        display: flex;
+        background-color: whitesmoke;
+        justify-content: space-between;
+        padding: 10px 30px;
+
+    }
+
+    .aboutme h1{
+        font-size: 50px;
+        
+
+    }
+
+    .aboutme p{
+        width:600px ;
+        background-color: whitesmoke;
+        border:none;
+        color: black;
+        font-size: 20px;
+    }
+    
+    .about-text{
+        text-align: start;
+        align-items: center;
+    }
+
+
+    .about-image img{
+        width: 300px;
+    }
+
+   /* ANIMASI ABOUT ME */
+.aboutme h1{
+    color: #007979;
+    transition: 0.5s ease;
+}
+
+/* .aboutme h1:hover{
+    color: #FF9A00;
+  
+} */
+
+
+/* KOTAK BAGIAN ABOUT ME */
+.aboutme h1{
+    color: #E37434;
+    border: 3px solid #007979;
+    border-radius: 15px;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: 0.5s ease;
+}
+
+.aboutme h1:hover{
+    color: #FF9A00;
+    border-color: #FF9A00;
+    
+}
+
+
+/* GAMBAR ABOUT ME */
+.about-image img{
+    width: 300px;
+    border: 5px solid #007979;
+    border-radius: 20px;
+    transition: 0.5s ease;
+}
+
+/* SAAT KURSOR MENYENTUH GAMBAR */
+.about-image img:hover{
+      transform: scale(1.08) rotate(2deg);
+    border-color: #FF9A00;
+    box-shadow: 0 0 25px #FF9A00;
+}
+
+                                           /* BAGIAN SKILL */
+#skills > h2{
+    font-size: 50px;
+    color: black;
+    margin-top: 20px;
+}
+
+.skills-container{
+    display:flex;
+    justify-content: center;
+    gap: 50px;
+    
+}
+
+.skill-card{
+    width: 300px;
+    background-color: #44A1A4;
+border: solid #FF9A00;
+padding: 20px;
+margin: 50px auto;
+border-radius: 10px;
+box-shadow: 0px 15px #FF9A00;
+transition: 0.8s;
+
+
+}
+
+.skill-card h2{
+    color: whitesmoke;
+    font-family: 22px;
+    
+}
+
+.skill-card p{
+    background:none ;
+    border: none;
+    
+}
+
+.skill-card:hover{
+    background-color: #67C090;
+    border: solid #215B63;
+    box-shadow: 0px 15px #215B63;
+    transform: translateY(-10px) translateX(10px);
+}
+.html{
+    width: 90%;
+    height: 100%;
+    background-color: red;
+
+}
+
+.css{
+    width: 90%;
+    height: 100%;
+    background-color: red;
+    
+}
+
+.js{
+    width: 90%;
+    height: 100%;
+    background-color: red;
+}
+
+                                    /* BAGIAN ISI DATA */
+
+/* contact section */
+    .contact{
+        width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        margin: 80px auto;
+    }
+
+
+    .contact-form{
+        background-color: whitesmoke;
+        padding: 30px;
+        border-radius: 20px;
+         
+
+    }
+
+    .contact-form form{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+    }
+
+    .contact-form label{
+        font-weight: bold;
+    }
+
+    .contact-form form input, .contact-form form textarea, .contact-form
+    form select{
+        border: 2px solid yellow;
+        border-radius: 10px;
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+
+    .contact-form form button{
+        margin-top: 20px;
+        border: none;
+        border-radius: 20px;
+        background-color: yellow;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 14px;
+    }
+
+
+     .contact-form form input:focus,.contact-form form textarea:focus,.contact-form
+    form select:focus{
+
+        border:2px solid red;
+        outline: none;
+
+    }
+
+                                   /* BAGIAN ISI DATA (BAGIAN MAPNYA) */
+
+    .contact-maps iframe{
+        height: 480px;
+        border-radius: 20px;
+        flex: 1;
+
+    }
+
+    .contact-maps{
+        flex: 1;
+        width: 500px;
+
+    }
+/* End contact section */
+
