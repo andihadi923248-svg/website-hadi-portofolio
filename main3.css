@@ -1,4 +1,4 @@
-  *{
+*{
     margin: 0;
     padding: 0;
      scroll-behavior: smooth; 
@@ -252,3 +252,74 @@ transition: 0.8s;
     height: 100%;
     background-color: red;
 }
+
+/* contact section */
+    .contact{
+        width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        margin: 80px auto;
+    }
+
+
+    .contact-form{
+        background-color: whitesmoke;
+        padding: 30px;
+        border-radius: 20px;
+         
+
+    }
+
+    .contact-form form{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+    }
+
+    .contact-form label{
+        font-weight: bold;
+    }
+
+    .contact-form form input, .contact-form form textarea, .contact-form
+    form select{
+        border: 2px solid yellow;
+        border-radius: 10px;
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+
+    .contact-form form button{
+        margin-top: 20px;
+        border: none;
+        border-radius: 20px;
+        background-color: yellow;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 14px;
+    }
+
+
+     .contact-form form input:focus,.contact-form form textarea:focus,.contact-form
+    form select:focus{
+
+        border:2px solid red;
+        outline: none;
+
+    }
+
+                                   /* BAGIAN ISI DATA (BAGIAN MAPNYA) */
+
+    .contact-maps iframe{
+        height: 480px;
+        border-radius: 20px;
+        flex: 1;
+
+    }
+
+    .contact-maps{
+        flex: 1;
+        width: 500px;
+
+    }
