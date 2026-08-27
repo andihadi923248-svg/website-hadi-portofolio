@@ -1,325 +1,1861 @@
+
+/* =========================================================
+   WARNA UTAMA WEBSITE
+   Kalau ingin mengganti warna seluruh website,
+   ubah warna pada bagian ini.
+   ========================================================= */
+
+:root{
+
+  --bg-cream:#F8F4E8;
+  --bg-sage:#E9F0E1;
+
+  --canopy-deepest:var(--bg-cream);
+  --canopy-dark:var(--bg-sage);
+
+  --forest:#1B4332;
+  --forest-soft:#2F6B49;
+  --moss:#3F8259;
+  --fern:#4F9166;
+  --fern-pale:#DCEBDD;
+
+  --sunbeam:#C97A22;
+  --sunbeam-soft:#E7A84E;
+
+  --bark:#7A5236;
+
+  --mist:#20291F;
+  --mist-dim:#5B6456;
+
+  --line:rgba(27,49,36,0.14);
+
+  --shadow:
+    0 25px 60px -30px
+    rgba(27,49,36,0.22);
+
+}
+
+
+/* =========================================================
+   PENGATURAN DASAR WEBSITE
+   Menghilangkan jarak bawaan browser dan menentukan
+   jenis huruf yang digunakan.
+   ========================================================= */
+
 *{
-    margin: 0;
-    padding: 0;
-     scroll-behavior: smooth; 
-    }
 
-                                                  /* BAGIAN ATAS */
-.navbar2{
-        display: flex;
-        background-color: #233D4D;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 60px;
-    }
+  margin:0;
 
-    .menu ul{
-        display: flex;
-        gap: 10px;
-    }
+  padding:0;
 
-     .navbar2 h1{
-        font-weight: bold;
-        font-size: 24px;
-        color: white;
-    
-    }
+  box-sizing:border-box;
 
-     .menu ul li a{
-        color: white;
-        text-decoration: none;
-        font-size: 20px;
-        transition:0.5s ;
-    }
-
-    .menu ul li a:hover{
-        background-color: white;
-        color: #233D4D;
-        transform: translateY(-3px);
-        padding:10px 20px ;
-        border-radius:30% ;
-
-    }
-
-     .menu ul li{
-        list-style: none;
-    }
-
-    .nav-button a{
-        color: #233D4D;
-        background-color: white;
-        padding: 10px 20px;
-        border: 1px solid #233D4D;
-        border-radius: 20px;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-     .nav-button a:hover{
-        background-color: #007979;
-        border: 2px solid white;
-        transform: translateY(-3px);
-        color: whitesmoke;
-    }
-
-    .body{
-        background-color: aquamarine;
-        text-align: center;
-    }
-    
-     a{
-         color: #0F3040;
-        background-color: #007979;
-        border-radius: 15px;
-        border: whitesmoke;
-        padding: 15px;
-        display: inline-block;
-        margin: 20px;
-        transition: 0.5s; 
-
-    }
-
-                                             /* BAGIAN ABOUTME */
-    .aboutme{
-        background-color: #0F3040;
-    }
-
-     .aboutme-1{
-        color: red;
-        background-color: white;
-    }
-
-    .aboutme-2{
-        color:white ;
-        background-color: black;
-    }
-
-    .aboutme{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    padding: 40px 80px;
-    
-
-   
-}
-
-    .aboutme h1{
-        font-size: 50px;
-        
-
-    }
-
-   .aboutme p{
-    width:600px;
-    background-color: #215B63;
-    border:none;
-    color: black;
-    font-size: 20px;
-    border-radius: 10px;
-    border:3px solid #FF9A00;
-    padding: 10px 20px;
-
-    margin-top: 20px;
-}
-    
-   .about-text{
-        text-align: start;
-        align-items: center;
-    }
-
-   
-
-
-    .about-image img{
-        width: 300px;
-    }
-
-   /* ANIMASI ABOUT ME */
-.aboutme h1{
-    color: #007979;
-    transition: 0.5s ease;
-}
-
-.aboutme h1:hover{
-    color: #FF9A00;
-  
 }
 
 
-/* KOTAK BAGIAN ABOUT ME */
-.aboutme h1{
-    color: #E37434;
-    border: 3px solid #007979;
-    border-radius: 15px;
-    padding: 10px 20px;
-    display: inline-block;
-    transition: 0.5s ease;
-}
+html{
 
-.aboutme h1:hover{
-    color: #FF9A00;
-    border-color: #FF9A00;
-    
+  scroll-behavior:smooth;
+
 }
 
 
-/* GAMBAR ABOUT ME */
-.about-image{
-    width: 35%;
-    text-align: center;
+body{
+
+  background:var(--bg-cream);
+
+  color:var(--mist);
+
+  font-family:'Manrope',sans-serif;
+
+  overflow-x:hidden;
+
+  line-height:1.6;
+
 }
 
-.about-image img{
-    width: 300px;
-    border: 5px solid #007979;
-    border-radius: 20px;
-    transition: 0.5s ease;
+
+/* Semua judul menggunakan jenis huruf Fraunces */
+h1,
+h2,
+h3,
+.display{
+
+  font-family:'Fraunces',serif;
+
+  font-weight:600;
+
+  letter-spacing:-0.01em;
+
 }
 
-.about-image img:hover{
-    transform: scale(1.08) rotate(2deg);
-    border-color: #FF9A00;
-    box-shadow: 0 0 25px #FF9A00;
+
+/* Pengaturan dasar tautan */
+a{
+
+  color:inherit;
+
+  text-decoration:none;
+
 }
 
-                                                /* BAGIAN SKILL */
+
+/* Menghilangkan tanda daftar bawaan */
+ul{
+
+  list-style:none;
+
+}
+
+
+/* Mengatur gambar agar tidak melebihi ukuran wadah */
+img{
+
+  max-width:100%;
+
+  display:block;
+
+}
+
+
+/* Tampilan garis fokus ketika elemen dipilih */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+
+  outline:
+    2px solid var(--sunbeam);
+
+  outline-offset:3px;
+
+  border-radius:4px;
+
+}
+
+
+section{
+
+  position:relative;
+
+}
+
+
+/* =========================================================
+   PEMBUNGKUS KONTEN WEBSITE
+   Membatasi lebar isi agar tidak terlalu melebar.
+   ========================================================= */
+
+.wrap{
+
+  max-width:1180px;
+
+  margin:0 auto;
+
+  padding:
+    0 clamp(24px,5vw,64px);
+
+}
+
+
+/* =========================================================
+   JUDUL KECIL DI ATAS JUDUL UTAMA
+   ========================================================= */
+
+.eyebrow{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  font-family:'Manrope',sans-serif;
+
+  font-size:0.78rem;
+
+  letter-spacing:0.22em;
+
+  text-transform:uppercase;
+
+  color:var(--fern);
+
+  font-weight:700;
+
+  margin-bottom:18px;
+
+}
+
+
+.eyebrow::before{
+
+  content:"";
+
+  width:22px;
+
+  height:1px;
+
+  background:var(--fern);
+
+  display:inline-block;
+
+}
+
+
+/* =========================================================
+   BAGIAN NAVIGASI
+   Menu yang berada di bagian atas halaman.
+   ========================================================= */
+
+header.nav{
+
+  position:fixed;
+
+  top:0;
+
+  left:0;
+
+  right:0;
+
+  z-index:200;
+
+  padding:
+    20px clamp(20px,5vw,56px);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  transition:
+    background 0.4s ease,
+    padding 0.4s ease,
+    border-color 0.4s ease;
+
+  border-bottom:
+    1px solid transparent;
+
+}
+
+
+/* Tampilan navigasi setelah halaman digulir */
+header.nav.scrolled{
+
+  background:
+    rgba(8,23,17,0.82);
+
+  backdrop-filter:
+    blur(14px);
+
+  padding-top:14px;
+
+  padding-bottom:14px;
+
+  border-bottom:
+    1px solid var(--line);
+
+}
+
+
+/* Logo nama */
+.logo{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  font-family:'Fraunces',serif;
+
+  font-weight:700;
+
+  font-size:1.15rem;
+
+  color:var(--mist);
+
+}
+
+
+.logo svg{
+
+  width:22px;
+
+  height:22px;
+
+}
+
+
+/* Daftar menu */
+.nav-links{
+
+  display:flex;
+
+  gap:38px;
+
+  font-size:0.92rem;
+
+  font-weight:600;
+
+}
+
+
+.nav-links a{
+
+  position:relative;
+
+  color:var(--mist-dim);
+
+  transition:
+    color 0.3s ease;
+
+  padding:4px 0;
+
+}
+
+
+/* Garis yang muncul ketika menu diarahkan */
+.nav-links a::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+
+  bottom:-2px;
+
+  width:0;
+
+  height:2px;
+
+  background:var(--sunbeam);
+
+  transition:
+    width 0.35s ease;
+
+}
+
+
+.nav-links a:hover{
+
+  color:var(--mist);
+
+}
+
+
+.nav-links a:hover::after{
+
+  width:100%;
+
+}
+
+
+/* Tombol Hubungi Saya */
+.nav-cta{
+
+  border:
+    1px solid var(--fern);
+
+  color:var(--forest-soft);
+
+  padding:9px 20px;
+
+  border-radius:999px;
+
+  font-size:0.85rem;
+
+  font-weight:700;
+
+  transition:
+    all 0.3s ease;
+
+}
+
+
+.nav-cta:hover{
+
+  background:var(--fern);
+
+  color:#FFFFFF;
+
+}
+
+
+/* =========================================================
+   BAGIAN BERANDA
+   ========================================================= */
+
+.hero{
+
+  min-height:100vh;
+
+  display:flex;
+
+  align-items:center;
+
+  position:relative;
+
+  background:
+
+    radial-gradient(
+      ellipse 80% 55% at 22% 18%,
+      rgba(201,122,34,0.14),
+      transparent 60%
+    ),
+
+    linear-gradient(
+      180deg,
+      #FBF8EE 0%,
+      var(--canopy-deepest) 55%,
+      #EFF3E7 100%
+    );
+
+  overflow:hidden;
+
+  padding-top:80px;
+
+}
+
+
+/* =========================================================
+   EFEK KUNANG-KUNANG
+   ========================================================= */
+
+.fireflies{
+
+  position:absolute;
+
+  inset:0;
+
+  pointer-events:none;
+
+  z-index:2;
+
+}
+
+
+.firefly{
+
+  position:absolute;
+
+  width:4px;
+
+  height:4px;
+
+  border-radius:50%;
+
+  background:var(--sunbeam-soft);
+
+  box-shadow:
+    0 0 8px 2px
+    rgba(242,206,134,0.85);
+
+  animation:
+    drift linear infinite,
+    glow 3.4s ease-in-out infinite;
+
+  opacity:0;
+
+}
+
+
+/* Gerakan kunang-kunang */
+@keyframes drift{
+
+  from{
+
+    transform:
+      translate(0,0);
+
+  }
+
+  to{
+
+    transform:
+      translate(
+        var(--dx),
+        var(--dy)
+      );
+
+  }
+
+}
+
+
+/* Efek cahaya kunang-kunang */
+@keyframes glow{
+
+  0%,
+  100%{
+
+    opacity:0;
+
+  }
+
+  50%{
+
+    opacity:0.9;
+
+  }
+
+}
+
+
+/* =========================================================
+   TEKS UTAMA BAGIAN BERANDA
+   ========================================================= */
+
+.hero-content{
+
+  position:relative;
+
+  z-index:3;
+
+  max-width:760px;
+
+  margin:0 auto;
+
+  padding:
+    0 clamp(24px,6vw,64px);
+
+  text-align:center;
+
+}
+
+
+.hero-content .eyebrow{
+
+  justify-content:center;
+
+}
+
+
+.hero-content .eyebrow::before{
+
+  display:none;
+
+}
+
+
+.hero-title{
+
+  font-size:
+    clamp(2.6rem,6.4vw,5rem);
+
+  line-height:1.04;
+
+  color:var(--mist);
+
+}
+
+
+.hero-title em{
+
+  font-style:italic;
+
+  color:var(--fern);
+
+  font-weight:500;
+
+}
+
+
+.hero-sub{
+
+  margin-top:24px;
+
+  font-size:
+    clamp(1rem,2vw,1.18rem);
+
+  color:var(--mist-dim);
+
+  max-width:540px;
+
+  margin-left:auto;
+
+  margin-right:auto;
+
+}
+
+
+/* Tombol di bagian beranda */
+.hero-actions{
+
+  margin-top:40px;
+
+  display:flex;
+
+  gap:16px;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+}
+
+
+/* =========================================================
+   TAMPILAN TOMBOL
+   ========================================================= */
+
+.btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  padding:14px 28px;
+
+  border-radius:999px;
+
+  font-weight:700;
+
+  font-size:0.94rem;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+
+}
+
+
+/* Tombol utama berwarna oranye */
+.btn-primary{
+
+  background:var(--sunbeam);
+
+  color:#241705;
+
+  box-shadow:
+    0 14px 30px -12px
+    rgba(231,178,78,0.55);
+
+}
+
+
+.btn-primary:hover{
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 20px 36px -12px
+    rgba(231,178,78,0.65);
+
+}
+
+
+/* Tombol dengan garis luar */
+.btn-ghost{
+
+  border:
+    1px solid var(--line);
+
+  color:var(--mist);
+
+}
+
+
+.btn-ghost:hover{
+
+  border-color:var(--fern);
+
+  color:var(--forest-soft);
+
+  background:
+    rgba(79,145,102,0.08);
+
+  transform:
+    translateY(-3px);
+
+}
+
+
+/* =========================================================
+   PETUNJUK UNTUK MENGGULIR
+   ========================================================= */
+
+.scroll-cue{
+
+  position:absolute;
+
+  bottom:36px;
+
+  left:50%;
+
+  transform:
+    translateX(-50%);
+
+  z-index:3;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  gap:10px;
+
+  font-size:0.72rem;
+
+  letter-spacing:0.18em;
+
+  text-transform:uppercase;
+
+  color:var(--mist-dim);
+
+}
+
+
+.scroll-cue .stem{
+
+  width:1px;
+
+  height:38px;
+
+  background:
+    linear-gradient(
+      var(--fern),
+      transparent
+    );
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+
+.scroll-cue .stem::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:-1px;
+
+  top:-38px;
+
+  width:3px;
+
+  height:14px;
+
+  background:var(--sunbeam);
+
+  border-radius:2px;
+
+  animation:
+    dewdrop 2.2s ease-in-out infinite;
+
+}
+
+
+/* Animasi titik yang bergerak turun */
+@keyframes dewdrop{
+
+  0%{
+
+    top:-14px;
+
+    opacity:0;
+
+  }
+
+  15%{
+
+    opacity:1;
+
+  }
+
+  85%{
+
+    opacity:1;
+
+  }
+
+  100%{
+
+    top:38px;
+
+    opacity:0;
+
+  }
+
+}
+
+
+/* =========================================================
+   LAPISAN POHON PADA BAGIAN BAWAH BERANDA
+   ========================================================= */
+
+.canopy{
+
+  position:absolute;
+
+  left:0;
+
+  right:0;
+
+  width:100%;
+
+  z-index:1;
+
+  pointer-events:none;
+
+}
+
+
+/* Pohon paling belakang */
+.canopy.back{
+
+  bottom:-6%;
+
+  opacity:0.55;
+
+}
+
+
+/* Pohon bagian tengah */
+.canopy.mid{
+
+  bottom:-8%;
+
+  opacity:0.78;
+
+}
+
+
+/* Pohon paling depan */
+.canopy.front{
+
+  bottom:-10%;
+
+}
+
+
+/* =========================================================
+   JUDUL SETIAP BAGIAN WEBSITE
+   ========================================================= */
+
+.section-head{
+
+  max-width:620px;
+
+  margin-bottom:56px;
+
+}
+
+
+.section-head.center{
+
+  margin-left:auto;
+
+  margin-right:auto;
+
+  text-align:center;
+
+}
+
+
+.section-head.center .eyebrow{
+
+  justify-content:center;
+
+}
+
+
+.section-head.center .eyebrow::before{
+
+  display:none;
+
+}
+
+
+.section-head h2{
+
+  font-size:
+    clamp(2rem,4vw,2.7rem);
+
+  color:var(--mist);
+
+}
+
+
+.section-head p{
+
+  margin-top:16px;
+
+  color:var(--mist-dim);
+
+  font-size:1.02rem;
+
+}
+
+
+/* =========================================================
+   ANIMASI MUNCUL SAAT DIGULIR
+   ========================================================= */
+
+.reveal{
+
+  opacity:0;
+
+  transform:
+    translateY(36px);
+
+  transition:
+    opacity 0.9s cubic-bezier(.16,.8,.28,1),
+    transform 0.9s cubic-bezier(.16,.8,.28,1);
+
+}
+
+
+.reveal.in-view{
+
+  opacity:1;
+
+  transform:none;
+
+}
+
+
+/* Animasi muncul dari sebelah kiri */
+.reveal-left{
+
+  transform:
+    translateX(-44px);
+
+}
+
+
+.reveal-left.in-view{
+
+  transform:none;
+
+}
+
+
+/* Animasi muncul dari sebelah kanan */
+.reveal-right{
+
+  transform:
+    translateX(44px);
+
+}
+
+
+.reveal-right.in-view{
+
+  transform:none;
+
+}
+
+
+/* Mengatur jeda animasi setiap kartu */
+.stagger > *{
+
+  transition-delay:
+    calc(var(--i,0) * 110ms);
+
+}
+
+
+/* =========================================================
+   BAGIAN TENTANG SAYA
+   ========================================================= */
+
+.about{
+
+  padding:140px 0 120px;
+
+  background:var(--canopy-dark);
+
+  border-top:
+    1px solid var(--line);
+
+  border-bottom:
+    1px solid var(--line);
+
+}
+
+
+.about .wrap{
+
+  display:grid;
+
+  grid-template-columns:
+    0.85fr 1.15fr;
+
+  gap:72px;
+
+  align-items:center;
+
+}
+
+
+/* Wadah foto */
+.about-figure{
+
+  position:relative;
+
+}
+
+
+/* Bingkai foto */
+.about-figure .frame{
+
+  position:relative;
+
+  border-radius:
+    42% 58% 63% 37% /
+    45% 40% 60% 55%;
+
+  overflow:hidden;
+
+  border:
+    3px solid var(--fern);
+
+  box-shadow:var(--shadow);
+
+  aspect-ratio:4/5;
+
+}
+
+
+.about-figure .frame img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+}
+
+
+/* Lingkaran garis putus-putus di sekitar foto */
+.about-figure .ring{
+
+  position:absolute;
+
+  inset:-18px;
+
+  border:
+    1px dashed
+    rgba(143,203,155,0.4);
+
+  border-radius:
+    42% 58% 63% 37% /
+    45% 40% 60% 55%;
+
+  animation:
+    spin 40s linear infinite;
+
+}
+
+
+/* Animasi putaran garis */
+@keyframes spin{
+
+  to{
+
+    transform:
+      rotate(360deg);
+
+  }
+
+}
+
+
+/* Judul Tentang Saya */
+.about-copy h2{
+
+  font-size:
+    clamp(2rem,4vw,2.6rem);
+
+  margin-bottom:22px;
+
+  color:var(--mist);
+
+}
+
+
+/* Paragraf Tentang Saya */
+.about-copy p{
+
+  color:var(--mist-dim);
+
+  font-size:1.03rem;
+
+  margin-bottom:16px;
+
+}
+
+
+/* Huruf pertama paragraf dibuat lebih besar */
+.about-copy p .drop{
+
+  font-family:'Fraunces',serif;
+
+  font-size:3.2rem;
+
+  line-height:0.7;
+
+  float:left;
+
+  margin:
+    6px 8px 0 0;
+
+  color:var(--sunbeam);
+
+  font-weight:700;
+
+}
+
+
+/* Statistik Tentang Saya */
+.about-stats{
+
+  display:flex;
+
+  gap:36px;
+
+  margin-top:32px;
+
+  padding-top:28px;
+
+  border-top:
+    1px solid var(--line);
+
+}
+
+
+.about-stats div strong{
+
+  display:block;
+
+  font-family:'Fraunces',serif;
+
+  font-size:1.9rem;
+
+  color:var(--fern);
+
+}
+
+
+.about-stats div span{
+
+  font-size:0.82rem;
+
+  color:var(--mist-dim);
+
+  letter-spacing:0.04em;
+
+}
+
+
+/* =========================================================
+   BAGIAN KEMAMPUAN
+   ========================================================= */
+
 .skills{
-    background-color: #0F3040;
-}
 
-#skills > h2{
-    font-size: 50px;
-    color: black;
-    margin-top: 20px;
-}
+  padding:120px 0;
 
-.skills-container{
-    display:flex;
-    justify-content: center;
-    gap: 50px;
-    
-}
-
-.skill-card{
-    width: 300px;
-    background-color: #44A1A4;
-border: solid #FF9A00;
-padding: 20px;
-margin: 50px auto;
-border-radius: 10px;
-box-shadow: 0px 15px #FF9A00;
-transition: 0.8s;
-
+  background:var(--canopy-deepest);
 
 }
 
-.skill-card h2{
-    color: whitesmoke;
-    font-family: 22px;
-    
-}
 
-.skill-card p{
-    background:none ;
-    border: none;
-    
-}
+.skills-grid{
 
-.skill-card:hover{
-    background-color: #67C090;
-    border: solid #215B63;
-    box-shadow: 0px 15px #215B63;
-    transform: translateY(-10px) translateX(10px);
-}
-.html{
-    width: 90%;
-    height: 100%;
-    background-color: red;
+  display:grid;
+
+  gap:28px;
 
 }
 
-.css{
-    width: 90%;
-    height: 100%;
-    background-color: red;
-    
+
+/* Satu baris kemampuan */
+.vine-row{
+
+  display:grid;
+
+  grid-template-columns:
+    160px 1fr 60px;
+
+  align-items:center;
+
+  gap:24px;
+
+  padding:18px 0;
+
+  border-bottom:
+    1px solid var(--line);
+
 }
 
-.js{
-    width: 90%;
-    height: 100%;
-    background-color: red;
+
+.vine-row .skill-name{
+
+  font-family:'Fraunces',serif;
+
+  font-size:1.15rem;
+
+  color:var(--mist);
+
 }
 
-/* contact section */
-    .contact{
-        width: 1200px;
-        display: flex;
-        justify-content: space-between;
-        margin: 80px auto;
-    }
+
+/* Jalur tempat batang kemampuan bergerak */
+.vine-track{
+
+  position:relative;
+
+  height:10px;
+
+  background:
+    rgba(243,239,226,0.08);
+
+  border-radius:999px;
+
+  overflow:hidden;
+
+}
 
 
-    .contact-form{
-        background-color: whitesmoke;
-        padding: 30px;
-        border-radius: 20px;
-         
+/* Batang kemampuan */
+.vine-fill{
 
-    }
+  position:absolute;
 
-    .contact-form form{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        
-    }
+  left:0;
 
-    .contact-form label{
-        font-weight: bold;
-    }
+  top:0;
 
-    .contact-form form input, .contact-form form textarea, .contact-form
-    form select{
-        border: 2px solid yellow;
-        border-radius: 10px;
-        font-size: 16px;
-        padding: 6px 12px;
-    }
+  bottom:0;
 
-    .contact-form form button{
-        margin-top: 20px;
-        border: none;
-        border-radius: 20px;
-        background-color: yellow;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-        padding: 14px;
-    }
+  width:0%;
+
+  border-radius:999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--forest-soft),
+      var(--moss),
+      var(--fern)
+    );
+
+  transition:
+    width 1.4s
+    cubic-bezier(.16,.8,.28,1);
+
+}
 
 
-     .contact-form form input:focus,.contact-form form textarea:focus,.contact-form
-    form select:focus{
+/* Titik cahaya di ujung batang */
+.vine-fill::after{
 
-        border:2px solid red;
-        outline: none;
+  content:"";
 
-    }
+  position:absolute;
 
-                                   /* BAGIAN ISI DATA (BAGIAN MAPNYA) */
+  right:-3px;
 
-    .contact-maps iframe{
-        height: 480px;
-        border-radius: 20px;
-        flex: 1;
+  top:50%;
 
-    }
+  width:14px;
 
-    .contact-maps{
-        flex: 1;
-        width: 500px;
+  height:14px;
 
-    }
+  transform:
+    translateY(-50%);
+
+  background:
+    var(--fern-pale);
+
+  border-radius:50%;
+
+  box-shadow:
+    0 0 10px 2px
+    rgba(143,203,155,0.7);
+
+}
+
+
+/* Angka persentase */
+.vine-row .pct{
+
+  text-align:right;
+
+  font-weight:800;
+
+  font-family:'Fraunces',serif;
+
+  color:var(--sunbeam);
+
+}
+
+
+/* Kemampuan tambahan */
+.tools-note{
+
+  margin-top:52px;
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:12px;
+
+}
+
+
+.tools-note span{
+
+  border:
+    1px solid var(--line);
+
+  padding:9px 18px;
+
+  border-radius:999px;
+
+  font-size:0.86rem;
+
+  color:var(--mist-dim);
+
+}
+
+
+/* =========================================================
+   BAGIAN PROYEK
+   ========================================================= */
+
+.projects{
+
+  padding:120px 0 130px;
+
+  background:var(--canopy-dark);
+
+  border-top:
+    1px solid var(--line);
+
+}
+
+
+.project-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:28px;
+
+}
+
+
+/* Kartu setiap proyek */
+.specimen{
+
+  background:
+    linear-gradient(
+      160deg,
+      rgba(243,239,226,0.05),
+      rgba(243,239,226,0.02)
+    );
+
+  border:
+    1px solid var(--line);
+
+  border-radius:18px;
+
+  padding:30px 26px;
+
+  position:relative;
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    background 0.4s ease;
+
+}
+
+
+/* Efek ketika kartu proyek disentuh mouse */
+.specimen:hover{
+
+  transform:
+    translateY(-8px);
+
+  border-color:
+    var(--fern);
+
+  background:
+    linear-gradient(
+      160deg,
+      rgba(143,203,155,0.08),
+      rgba(243,239,226,0.02)
+    );
+
+}
+
+
+/* Nomor proyek */
+.specimen .tag-no{
+
+  font-family:'Fraunces',serif;
+
+  font-style:italic;
+
+  color:var(--fern);
+
+  font-size:0.85rem;
+
+  letter-spacing:0.05em;
+
+}
+
+
+/* Judul proyek */
+.specimen h3{
+
+  margin-top:14px;
+
+  font-size:1.4rem;
+
+  color:var(--mist);
+
+}
+
+
+/* Deskripsi proyek */
+.specimen p{
+
+  margin-top:12px;
+
+  color:var(--mist-dim);
+
+  font-size:0.94rem;
+
+}
+
+
+/* Wadah tanda teknologi */
+.specimen .chips{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin-top:20px;
+
+}
+
+
+/* Tanda teknologi */
+.specimen .chips span{
+
+  font-size:0.72rem;
+
+  padding:5px 11px;
+
+  border-radius:999px;
+
+  background:
+    rgba(201,122,34,0.14);
+
+  color:#8A4B12;
+
+  font-weight:700;
+
+  letter-spacing:0.03em;
+
+}
+
+
+/* Tautan Lihat Detail */
+.specimen .go{
+
+  margin-top:22px;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:6px;
+
+  font-weight:700;
+
+  font-size:0.88rem;
+
+  color:var(--mist);
+
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
+
+}
+
+
+/* Gerakan tautan ketika kartu disentuh */
+.specimen:hover .go{
+
+  gap:12px;
+
+  color:var(--forest-soft);
+
+}
+
+
+/* =========================================================
+   BAGIAN KONTAK
+   ========================================================= */
+
+.contact{
+
+  padding:130px 0 100px;
+
+  background:var(--canopy-deepest);
+
+}
+
+
+.contact .wrap{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:56px;
+
+  align-items:start;
+
+}
+
+
+/* Kotak formulir */
+.signpost{
+
+  padding:36px;
+
+  background:var(--canopy-dark);
+
+  border:
+    1px solid var(--line);
+
+  border-radius:20px;
+
+}
+
+
+/* Satu bagian dalam formulir */
+.field{
+
+  margin-bottom:20px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:8px;
+
+}
+
+
+/* Nama setiap kolom */
+.field label{
+
+  font-size:0.82rem;
+
+  font-weight:700;
+
+  letter-spacing:0.05em;
+
+  text-transform:uppercase;
+
+  color:var(--fern);
+
+}
+
+
+/* Kotak input, pilihan, dan pesan */
+.field input,
+.field select,
+.field textarea{
+
+  background:
+    rgba(243,239,226,0.05);
+
+  border:
+    1px solid var(--line);
+
+  border-radius:10px;
+
+  padding:12px 14px;
+
+  color:var(--mist);
+
+  font-family:'Manrope',sans-serif;
+
+  font-size:0.96rem;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+
+}
+
+
+/* Warna tulisan contoh pada kolom */
+.field input::placeholder,
+.field textarea::placeholder{
+
+  color:
+    rgba(205,198,178,0.55);
+
+}
+
+
+/* Tampilan kolom ketika sedang digunakan */
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+
+  border-color:
+    var(--fern);
+
+  background:
+    rgba(143,203,155,0.08);
+
+  outline:none;
+
+}
+
+
+/* Warna daftar pilihan */
+.field select option{
+
+  background:
+    var(--canopy-dark);
+
+  color:
+    var(--mist);
+
+}
+
+
+/* Tombol Kirim Pesan */
+.submit-btn{
+
+  width:100%;
+
+  padding:15px;
+
+  border:none;
+
+  border-radius:999px;
+
+  background:
+    var(--sunbeam);
+
+  color:#241705;
+
+  font-weight:800;
+
+  font-size:0.98rem;
+
+  cursor:pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+}
+
+
+/* Efek ketika tombol disentuh */
+.submit-btn:hover{
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 16px 30px -14px
+    rgba(231,178,78,0.6);
+
+}
+
+
+/* =========================================================
+   BAGIAN PETA
+   ========================================================= */
+
+.map-card{
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  border:
+    1px solid var(--line);
+
+  height:100%;
+
+  min-height:420px;
+
+}
+
+
+.map-card iframe{
+
+  width:100%;
+
+  height:100%;
+
+  min-height:420px;
+
+  border:0;
+
+  filter:
+    grayscale(0.15)
+    saturate(1.1);
+
+}
+
+
+/* =========================================================
+   BAGIAN KAKI WEBSITE
+   ========================================================= */
+
+footer{
+
+  padding:
+    40px clamp(24px,5vw,64px);
+
+  text-align:center;
+
+  color:var(--mist-dim);
+
+  font-size:0.86rem;
+
+  border-top:
+    1px solid var(--line);
+
+  background:
+    var(--canopy-dark);
+
+}
+
+
+footer strong{
+
+  color:
+    var(--fern);
+
+}
+
+
+/* =========================================================
+   PENGATURAN UNTUK LAYAR KECIL
+   Digunakan ketika website dibuka melalui HP atau tablet.
+   ========================================================= */
+
+@media (max-width:900px){
+
+
+  /* Menyembunyikan menu navigasi pada layar kecil */
+  .nav-links{
+
+    display:none;
+
+  }
+
+
+  /* Foto dan tulisan Tentang Saya menjadi satu kolom */
+  .about .wrap{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  /* Membatasi ukuran foto */
+  .about-figure{
+
+    max-width:320px;
+
+    margin:0 auto;
+
+  }
+
+
+  /* Kartu proyek menjadi satu kolom */
+  .project-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  /* Formulir dan peta menjadi satu kolom */
+  .contact .wrap{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  /* Ukuran baris kemampuan diperkecil */
+  .vine-row{
+
+    grid-template-columns:
+      100px 1fr 50px;
+
+    gap:14px;
+
+  }
+
+}
+
+
+/* =========================================================
+   MENGURANGI ANIMASI JIKA PENGGUNA MEMATIKAN ANIMASI
+   PADA PENGATURAN PERANGKAT
+   ========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+  *{
+
+    animation-duration:
+      0.001ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.001ms !important;
+
+  }
+
+
+  html{
+
+    scroll-behavior:auto;
+
+  }
+
+}
+

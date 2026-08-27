@@ -1,117 +1,1043 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>di suruh buat lagi</title>
-     <link rel="stylesheet" href="main3.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Andi Muhammad Hadi Pratama — Portofolio</title>
+
+  <!-- =====================================================
+       MENGHUBUNGKAN FONT DARI GOOGLE FONTS
+       ===================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- =====================================================
+       MENGHUBUNGKAN FILE CSS
+       File CSS berisi seluruh pengaturan tampilan website
+       ===================================================== -->
+
+  <link rel="stylesheet" href="main3.css">
+
 </head>
+
 <body>
 
-                                            <!-- BAGIAN ATAS -->
-    <nav class="navbar2">
-        <h1>website coba"</h1>
-        <div class="menu">
-            <ul>
-                <li><a href="">home</a></li>
-                <li><a href="#aboutme">about</a></li>
-                <li><a href="#skills">skill</a></li>
-            </ul>
+
+<!-- =====================================================
+     BAGIAN NAVIGASI
+     Menu yang berada di bagian paling atas website
+     ===================================================== -->
+
+<header class="nav" id="siteNav">
+
+  <!-- Logo dan nama -->
+  <a href="#top" class="logo">
+
+    <svg viewBox="0 0 24 24" fill="none">
+      <path
+        d="M12 2C7 2 4 6 4 10.5S7.5 20 12 22c4.5-2 8-7 8-11.5S17 2 12 2Z"
+        fill="#2F6B49"
+      />
+    </svg>
+
+    Hadi Pratama
+
+  </a>
+
+
+  <!-- Daftar menu navigasi -->
+  <nav class="nav-links">
+
+    <a href="#top">Beranda</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#skill">Skill</a>
+    <a href="#proyek">Proyek</a>
+    <a href="#kontak">Kontak</a>
+
+  </nav>
+
+
+  <!-- Tombol untuk menuju bagian kontak -->
+  <a href="#kontak" class="nav-cta">
+    Hubungi Saya
+  </a>
+
+</header>
+
+
+
+<!-- =====================================================
+     BAGIAN BERANDA
+     Bagian pertama yang dilihat ketika website dibuka
+     ===================================================== -->
+
+<section class="hero" id="top">
+
+
+  <!-- Tempat untuk membuat efek kunang-kunang -->
+  <div class="fireflies" id="fireflies"></div>
+
+
+  <!-- ===================================================
+       LAPISAN POHON PALING BELAKANG
+       =================================================== -->
+
+  <svg
+    class="canopy back"
+    viewBox="0 0 1600 260"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+
+    <g fill="#CFE3C7">
+
+      <circle cx="40" cy="200" r="90"/>
+      <circle cx="150" cy="180" r="110"/>
+      <circle cx="280" cy="205" r="95"/>
+      <circle cx="410" cy="175" r="120"/>
+      <circle cx="560" cy="200" r="100"/>
+      <circle cx="700" cy="180" r="115"/>
+      <circle cx="850" cy="205" r="95"/>
+      <circle cx="990" cy="175" r="120"/>
+      <circle cx="1140" cy="200" r="100"/>
+      <circle cx="1280" cy="180" r="115"/>
+      <circle cx="1420" cy="205" r="95"/>
+      <circle cx="1560" cy="180" r="110"/>
+
+    </g>
+
+  </svg>
+
+
+
+  <!-- ===================================================
+       LAPISAN POHON BAGIAN TENGAH
+       =================================================== -->
+
+  <svg
+    class="canopy mid"
+    viewBox="0 0 1600 240"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+
+    <g fill="#A9D19C">
+
+      <circle cx="0" cy="190" r="80"/>
+      <circle cx="120" cy="160" r="105"/>
+      <circle cx="260" cy="195" r="90"/>
+      <circle cx="400" cy="155" r="115"/>
+      <circle cx="540" cy="190" r="95"/>
+      <circle cx="680" cy="160" r="110"/>
+      <circle cx="830" cy="195" r="90"/>
+      <circle cx="970" cy="155" r="115"/>
+      <circle cx="1120" cy="190" r="95"/>
+      <circle cx="1260" cy="160" r="110"/>
+      <circle cx="1400" cy="195" r="90"/>
+      <circle cx="1560" cy="165" r="105"/>
+
+    </g>
+
+  </svg>
+
+
+
+  <!-- ===================================================
+       LAPISAN POHON PALING DEPAN
+       =================================================== -->
+
+  <svg
+    class="canopy front"
+    viewBox="0 0 1600 220"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+
+    <g fill="#6FAE7C">
+
+      <circle cx="20" cy="175" r="75"/>
+      <circle cx="140" cy="150" r="95"/>
+      <circle cx="270" cy="180" r="82"/>
+      <circle cx="410" cy="145" r="105"/>
+      <circle cx="560" cy="178" r="88"/>
+      <circle cx="700" cy="150" r="100"/>
+      <circle cx="850" cy="180" r="82"/>
+      <circle cx="990" cy="145" r="105"/>
+      <circle cx="1140" cy="178" r="88"/>
+      <circle cx="1280" cy="150" r="100"/>
+      <circle cx="1420" cy="180" r="82"/>
+      <circle cx="1560" cy="150" r="95"/>
+
+    </g>
+
+  </svg>
+
+
+
+  <!-- ===================================================
+       TEKS UTAMA BAGIAN BERANDA
+       =================================================== -->
+
+  <div class="hero-content">
+
+    <p class="eyebrow">
+      Portofolio Digital · Kalimantan Timur
+    </p>
+
+    <h1 class="hero-title">
+      Andi Muhammad Hadi <em>Pratama</em>
+    </h1>
+
+    <p class="hero-sub">
+      Web developer pemula yang tumbuh di antara rimbunnya
+      hutan hujan Kalimantan Timur — merancang halaman web
+      serapi dan senyaman kanopi hutan yang menaungi.
+    </p>
+
+
+    <!-- Tombol pada bagian beranda -->
+    <div class="hero-actions">
+
+      <a href="#proyek" class="btn btn-primary">
+        Lihat Proyek
+      </a>
+
+      <a href="#kontak" class="btn btn-ghost">
+        Hubungi Saya
+      </a>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- Petunjuk untuk menggulir halaman -->
+  <div class="scroll-cue">
+
+    <span>Gulir</span>
+
+    <span class="stem"></span>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BAGIAN TENTANG SAYA
+     Berisi foto dan informasi tentang diri sendiri
+     ===================================================== -->
+
+<section class="about" id="tentang">
+
+  <div class="wrap">
+
+
+    <!-- Bagian foto -->
+    <div class="about-figure reveal reveal-left">
+
+      <div class="ring"></div>
+
+      <div class="frame">
+
+        <img
+          src="hadi p.jpg"
+          alt="Foto Andi Muhammad Hadi Pratama"
+        >
+
+      </div>
+
+    </div>
+
+
+
+    <!-- Bagian tulisan tentang diri sendiri -->
+    <div class="about-copy reveal reveal-right">
+
+      <p class="eyebrow">
+        Kisah Singkat
+      </p>
+
+      <h2>Tentang Saya</h2>
+
+
+      <p>
+        <span class="drop">S</span>aya Andi Muhammad Hadi Pratama,
+        tinggal di Kalimantan Timur — tanah tempat hutan hujan tropis
+        tumbuh berdampingan dengan denyut pembangunan baru Indonesia.
+        Dari sanalah saya belajar bahwa sesuatu yang rapi dan kuat
+        selalu tumbuh dari fondasi yang sabar.
+      </p>
+
+
+      <p>
+        Saat ini saya sedang menekuni dunia pengembangan web —
+        mulai dari menata struktur HTML, mewarnai dan merapikan
+        tampilan lewat CSS, hingga menghidupkan interaksi dengan
+        JavaScript. Setiap proyek saya perlakukan seperti merawat
+        satu petak kecil hutan: butuh ketelitian, kesabaran,
+        dan ruang untuk terus tumbuh.
+      </p>
+
+
+      <!-- Statistik sederhana -->
+      <div class="about-stats">
+
+        <div>
+          <strong>3+</strong>
+          <span>Skill Inti</span>
         </div>
 
-        <div class="nav-button">
-            <a href="">hubungi saya
-
-            </a>
-
-        </nav>
-
-        </div>
-                                            <!-- BAGIAN ABOUTME -->
-        <section id="aboutme" class="aboutme" data-aos="fade-up" data-aos-duration="3000">
-        <div class="about-text" data-aos="fade-right" data-aos-duration="2500">
-            <h1>about me</h1>
-            <p>Nama saya Andi muhammad hadi pratama,dan saya tinggal di Kalimantan Timur</p>
-        </div>
-        <div class="about-image">
-            <img src="hadi p.jpg" alt="" data-aos="fade-left" data-aos-duration="2500">
-            
-        </div>
-   </section>
-
-                                        <!-- BAGIAN SKILL -->
-
-   <section id="skills" class="skills" data-aos="fade-down" data-aos-duration="2500">
-        <h2>my skills</h2>
-        <div class="skills-container" data-aos="fade-right" data-aos-duration="2500">
-            <div class="skill-card">
-                <h2>html</h2>
-                <p>⭐⭐⭐⭐⭐</p>
-                <div class="progress">
-                    <div class=" html"></div>
-                </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-duration="2500">
-                <h2>css</h2>
-                <p>⭐⭐⭐⭐</p>
-                <div class="progress">
-                    <div class=" css"></div>
-                    </div>
-            </div>
-            <div class="skill-card" data-aos="fade-left" data-aos-duration="2500">
-                <h2>javascript</h2>
-                <p>⭐⭐⭐</p>
-                <div class="progress">
-                    <div class=" jss"></div>
-            </div>
-        </div>
-   </section>
-
-                                         <!-- BAGIAN ISI DATA -->
-
-   <section id="contact" class="contact" data-aos="flip-left" data-aos-duration="2500">
-        <div class="contact-form">
-            <form action="https://formsubmit.co/andi.hadi923248@gmail.com" method="post">
-                <label>nama</label >
-                <input type="text" placeholder="Nama anda...." name="Nama">
-                <label >Email</label>
-                <input type="email"  placeholder="Email anda...." name="Email">
-                <label >umur</label>
-                <input type="number" placeholder="Umur anda...." name="Usia">
-                <label >gender</label>
-                <select name="gender" id="">
-                    <option value="">pilih gender anda</option>
-                    <option value="pria">pria</option>
-                    <option value="wanita">wanita</option>
-                </select>
-                <textarea name="pesan" id=""></textarea>
-                <button type="submit">kirim pesan</button>
-                
-            </form>
+        <div>
+          <strong>100%</strong>
+          <span>Semangat Belajar</span>
         </div>
 
-        
-                                                <!-- BAGIAN MAP -->
-
-        <div class="contact-maps" data-aos="flip-right" data-aos-duration="2500">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12077.725685717276!2d107.03813559999999!3d-6.5252823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69bc6e5be3d9bd%3A0x6b9881dabd801476!2sSMK%20IDN%20Boarding%20School!5e1!3m2!1sid!2sid!4v1786603954258!5m2!1sid!2sid" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <div>
+          <strong>∞</strong>
+          <span>Rasa Ingin Tahu</span>
         </div>
-   </section>
-  
 
-   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-   <script>
-  AOS.init();
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BAGIAN KEMAMPUAN
+     Menampilkan kemampuan HTML, CSS, dan JavaScript
+     ===================================================== -->
+
+<section class="skills" id="skill">
+
+  <div class="wrap">
+
+
+    <!-- Judul bagian kemampuan -->
+    <div class="section-head center reveal">
+
+      <p class="eyebrow">
+        Yang Sudah Ditumbuhkan
+      </p>
+
+      <h2>Kemampuan</h2>
+
+      <p>
+        Setiap batang keahlian ini tumbuh perlahan lewat latihan —
+        semakin sering dirawat, semakin kuat akarnya.
+      </p>
+
+    </div>
+
+
+
+    <!-- Daftar kemampuan -->
+    <div class="skills-grid">
+
+
+      <!-- Kemampuan HTML -->
+      <div class="vine-row reveal" data-skill>
+
+        <span class="skill-name">
+          HTML
+        </span>
+
+        <div class="vine-track">
+
+          <div
+            class="vine-fill"
+            data-target="92"
+          ></div>
+
+        </div>
+
+        <span class="pct">
+          92%
+        </span>
+
+      </div>
+
+
+
+      <!-- Kemampuan CSS -->
+      <div class="vine-row reveal" data-skill>
+
+        <span class="skill-name">
+          CSS
+        </span>
+
+        <div class="vine-track">
+
+          <div
+            class="vine-fill"
+            data-target="80"
+          ></div>
+
+        </div>
+
+        <span class="pct">
+          80%
+        </span>
+
+      </div>
+
+
+
+      <!-- Kemampuan JavaScript -->
+      <div class="vine-row reveal" data-skill>
+
+        <span class="skill-name">
+          JavaScript
+        </span>
+
+        <div class="vine-track">
+
+          <div
+            class="vine-fill"
+            data-target="60"
+          ></div>
+
+        </div>
+
+        <span class="pct">
+          60%
+        </span>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- Kemampuan tambahan -->
+    <div class="tools-note reveal">
+
+      <span>Responsive Design</span>
+      <span>Git &amp; GitHub</span>
+      <span>Figma Dasar</span>
+      <span>Animasi Scroll</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BAGIAN PROYEK
+     Menampilkan beberapa proyek yang pernah dibuat
+     ===================================================== -->
+
+<section class="projects" id="proyek">
+
+  <div class="wrap">
+
+
+    <!-- Judul bagian proyek -->
+    <div class="section-head reveal">
+
+      <p class="eyebrow">
+        Katalog Karya
+      </p>
+
+      <h2>Proyek Pilihan</h2>
+
+      <p>
+        Beberapa hasil latihan yang sudah dirapikan dan dicatat
+        dalam buku catatan lapangan saya.
+      </p>
+
+    </div>
+
+
+
+    <!-- Daftar kartu proyek -->
+    <div class="project-grid stagger">
+
+
+      <!-- Proyek pertama -->
+      <article
+        class="specimen reveal"
+        style="--i:0"
+      >
+
+        <span class="tag-no">
+          Spesimen No. 01
+        </span>
+
+        <h3>
+          Company Profile Sekolah
+        </h3>
+
+        <p>
+          Halaman profil sekolah dengan navigasi rapi,
+          galeri kegiatan, dan bagian kontak yang mudah
+          dijangkau dari perangkat apapun.
+        </p>
+
+        <div class="chips">
+
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>Responsive</span>
+
+        </div>
+
+        <a href="#" class="go">
+          Lihat Detail →
+        </a>
+
+      </article>
+
+
+
+      <!-- Proyek kedua -->
+      <article
+        class="specimen reveal"
+        style="--i:1"
+      >
+
+        <span class="tag-no">
+          Spesimen No. 02
+        </span>
+
+        <h3>
+          Landing Page Kedai Kopi
+        </h3>
+
+        <p>
+          Satu halaman promosi dengan menu interaktif,
+          animasi scroll, dan tombol pemesanan yang jelas
+          untuk pelanggan.
+        </p>
+
+        <div class="chips">
+
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+
+        </div>
+
+        <a href="#" class="go">
+          Lihat Detail →
+        </a>
+
+      </article>
+
+
+
+      <!-- Proyek ketiga -->
+      <article
+        class="specimen reveal"
+        style="--i:2"
+      >
+
+        <span class="tag-no">
+          Spesimen No. 03
+        </span>
+
+        <h3>
+          Aplikasi Catatan Tugas
+        </h3>
+
+        <p>
+          Daftar tugas sederhana yang bisa ditambah,
+          ditandai selesai, dan dihapus — latihan logika
+          JavaScript dari nol.
+        </p>
+
+        <div class="chips">
+
+          <span>JavaScript</span>
+          <span>LocalStorage</span>
+
+        </div>
+
+        <a href="#" class="go">
+          Lihat Detail →
+        </a>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BAGIAN KONTAK
+     Berisi formulir pesan dan peta
+     ===================================================== -->
+
+<section class="contact" id="kontak">
+
+  <div class="wrap">
+
+
+    <!-- Judul bagian kontak -->
+    <div
+      style="grid-column:1/-1;"
+      class="section-head reveal"
+    >
+
+      <p class="eyebrow">
+        Mari Terhubung
+      </p>
+
+      <h2>Kontak</h2>
+
+      <p>
+        Ada proyek, kolaborasi, atau sekadar ingin menyapa?
+        Kirim pesan lewat formulir di bawah ini.
+      </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         FORMULIR KONTAK
+         ================================================= -->
+
+    <form
+      class="signpost reveal reveal-left"
+      action="https://formsubmit.co/andi.hadi923248@gmail.com"
+      method="post"
+    >
+
+
+      <!-- Kolom nama -->
+      <div class="field">
+
+        <label>Nama</label>
+
+        <input
+          type="text"
+          name="Nama"
+          placeholder="Nama anda...."
+        >
+
+      </div>
+
+
+      <!-- Kolom email -->
+      <div class="field">
+
+        <label>Email</label>
+
+        <input
+          type="email"
+          name="Email"
+          placeholder="Email anda...."
+        >
+
+      </div>
+
+
+      <!-- Kolom umur -->
+      <div class="field">
+
+        <label>Umur</label>
+
+        <input
+          type="number"
+          name="Usia"
+          placeholder="Umur anda...."
+        >
+
+      </div>
+
+
+      <!-- Pilihan gender -->
+      <div class="field">
+
+        <label>Gender</label>
+
+        <select name="gender">
+
+          <option value="">
+            Pilih gender anda
+          </option>
+
+          <option value="pria">
+            Pria
+          </option>
+
+          <option value="wanita">
+            Wanita
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- Kolom pesan -->
+      <div class="field">
+
+        <label>Pesan</label>
+
+        <textarea
+          name="pesan"
+          rows="4"
+          placeholder="Tulis pesan anda...."
+        ></textarea>
+
+      </div>
+
+
+      <!-- Tombol mengirim pesan -->
+      <button
+        type="submit"
+        class="submit-btn"
+      >
+        Kirim Pesan
+      </button>
+
+    </form>
+
+
+
+    <!-- =================================================
+         PETA LOKASI
+         ================================================= -->
+
+    <div class="map-card reveal reveal-right">
+
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253.87415169228055!2d116.20315756270233!3d-1.8963938858605154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df047b71cc023b5%3A0xc5bf66dcbab137d7!2sDhany%20Makassar!5e1!3m2!1sid!2sid!4v1787815502665!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BAGIAN KAKI WEBSITE
+     ===================================================== -->
+
+<footer>
+
+  &copy; 2026
+
+  <strong>
+    Andi Muhammad Hadi Pratama
+  </strong>
+
+  — dibuat dengan semangat rimba Kalimantan Timur.
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     JavaScript tetap berada di file index.html
+     ===================================================== -->
+
+
+<script>
+
+
+  // =====================================================
+  // MENGUBAH LATAR BELAKANG NAVIGASI SAAT HALAMAN
+  // DIGULIR KE BAWAH
+  // =====================================================
+
+  const nav =
+    document.getElementById('siteNav');
+
+
+  window.addEventListener(
+    'scroll',
+    () => {
+
+      nav.classList.toggle(
+        'scrolled',
+        window.scrollY > 40
+      );
+
+    }
+  );
+
+
+
+  // =====================================================
+  // ANIMASI MUNCUL SAAT BAGIAN WEBSITE TERLIHAT
+  // =====================================================
+
+  const revealEls =
+    document.querySelectorAll('.reveal');
+
+
+  const io =
+    new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add(
+              'in-view'
+            );
+
+
+            // =================================================
+            // MENJALANKAN ANIMASI BATANG KEMAMPUAN
+            // =================================================
+
+            if (
+              entry.target.hasAttribute(
+                'data-skill'
+              )
+            ) {
+
+              const fill =
+                entry.target.querySelector(
+                  '.vine-fill'
+                );
+
+
+              if (fill) {
+
+                fill.style.width =
+                  fill.dataset.target + '%';
+
+              }
+
+            }
+
+
+            // Berhenti mengamati setelah animasi dijalankan
+            io.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold:0.2
+      }
+    );
+
+
+  // Menjalankan pengamatan pada semua elemen
+  revealEls.forEach(el => {
+
+    io.observe(el);
+
+  });
+
+
+
+  // =====================================================
+  // ANIMASI PARALLAX UNTUK LAPISAN POHON
+  // Lapisan pohon bergerak berbeda ketika halaman digulir
+  // =====================================================
+
+  const layers = [
+
+    {
+      el:document.querySelector(
+        '.canopy.back'
+      ),
+      speed:0.12
+    },
+
+    {
+      el:document.querySelector(
+        '.canopy.mid'
+      ),
+      speed:0.22
+    },
+
+    {
+      el:document.querySelector(
+        '.canopy.front'
+      ),
+      speed:0.34
+    }
+
+  ];
+
+
+
+  // Mengecek apakah pengguna mematikan animasi
+  const reduceMotion =
+    window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+
+
+  // Menjalankan parallax jika animasi tidak dimatikan
+  if (!reduceMotion) {
+
+    window.addEventListener(
+      'scroll',
+      () => {
+
+        const y =
+          window.scrollY;
+
+
+        layers.forEach(layer => {
+
+          if (layer.el) {
+
+            layer.el.style.transform =
+              `translateY(${y * layer.speed}px)`;
+
+          }
+
+        });
+
+      },
+      {
+        passive:true
+      }
+    );
+
+  }
+
+
+
+  // =====================================================
+  // MEMBUAT EFEK KUNANG-KUNANG SECARA OTOMATIS
+  // =====================================================
+
+  if (!reduceMotion) {
+
+    const field =
+      document.getElementById(
+        'fireflies'
+      );
+
+
+    // Jumlah kunang-kunang berbeda untuk komputer dan HP
+    const count =
+      window.innerWidth < 700
+        ? 10
+        : 22;
+
+
+
+    // Membuat kunang-kunang satu per satu
+    for (
+      let i = 0;
+      i < count;
+      i++
+    ) {
+
+      const f =
+        document.createElement(
+          'span'
+        );
+
+
+      f.className =
+        'firefly';
+
+
+
+      // Menentukan posisi awal secara acak
+      const startX =
+        Math.random() * 100;
+
+      const startY =
+        40 +
+        Math.random() * 60;
+
+
+
+      // Menentukan arah gerakan secara acak
+      const dx =
+        (Math.random() - 0.5) * 220;
+
+      const dy =
+        -(60 + Math.random() * 160);
+
+
+
+      // Menentukan lama animasi
+      const dur =
+        8 + Math.random() * 10;
+
+
+      // Menentukan waktu mulai secara acak
+      const delay =
+        Math.random() * 10;
+
+
+
+      // Mengatur posisi kunang-kunang
+      f.style.left =
+        startX + '%';
+
+      f.style.top =
+        startY + '%';
+
+
+
+      // Mengatur arah gerakan
+      f.style.setProperty(
+        '--dx',
+        dx + 'px'
+      );
+
+      f.style.setProperty(
+        '--dy',
+        dy + 'px'
+      );
+
+
+
+      // Mengatur lama animasi
+      f.style.animationDuration =
+        dur + 's, ' +
+        (2.6 + Math.random() * 2) +
+        's';
+
+
+
+      // Mengatur waktu mulai animasi
+      f.style.animationDelay =
+        delay + 's, ' +
+        delay + 's';
+
+
+
+      // Memasukkan kunang-kunang ke halaman
+      field.appendChild(f);
+
+    }
+
+  }
+
 </script>
 
 
-        
-  
-    
 </body>
 </html>
-
-<style>
-   
-
-</style>
+```
