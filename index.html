@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,19 +6,25 @@
 
   <title>Andi Muhammad Hadi Pratama — Portofolio</title>
 
-  <!-- =====================================================
+  <!-- =========================================================
        MENGHUBUNGKAN FONT DARI GOOGLE FONTS
-       ===================================================== -->
+       Font Fraunces digunakan untuk judul agar terlihat elegan.
+       Font Manrope digunakan untuk teks biasa agar mudah dibaca.
+       ========================================================= -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
-  <!-- =====================================================
+  <!-- =========================================================
        MENGHUBUNGKAN FILE CSS
-       File CSS berisi seluruh pengaturan tampilan website
-       ===================================================== -->
+       Semua pengaturan warna, ukuran, posisi, animasi, dan
+       tampilan website akan diletakkan di dalam style.css.
+       ========================================================= -->
 
   <link rel="stylesheet" href="main3.css">
 
@@ -28,21 +33,495 @@
 <body>
 
 
-<!-- =====================================================
-     BAGIAN NAVIGASI
-     Menu yang berada di bagian paling atas website
-     ===================================================== -->
+<!-- =========================================================
+     BAGIAN PEMBUKA / PRELOADER
+     Bagian ini muncul pertama kali ketika website dibuka.
+
+     Fungsinya:
+     1. Menampilkan proses loading dari 0% sampai 100%.
+     2. Menampilkan nama Andi Muhammad Hadi Pratama.
+     3. Menampilkan siluet orangutan dan burung enggang.
+     4. Menampilkan partikel daun yang bergerak.
+     5. Setelah selesai akan muncul tombol "Masuk".
+     ========================================================= -->
+
+<div id="preloader">
+
+
+  <!-- =======================================================
+       SILUET ORANGUTAN
+       Siluet ini diletakkan di sisi kiri layar pembuka.
+       ======================================================= -->
+
+  <div class="pre-animal left" aria-hidden="true">
+
+    <svg viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg">
+
+      <g fill="#8FCB9B" fill-opacity="0.55">
+
+        <path d="M18 96 Q0 130 8 158 Q14 168 24 162 Q18 138 34 106 Z"/>
+
+        <path d="M102 96 Q120 130 112 158 Q106 168 96 162 Q102 138 86 106 Z"/>
+
+        <ellipse cx="60" cy="122" rx="40" ry="44"/>
+
+        <ellipse cx="60" cy="66" rx="32" ry="29"/>
+
+        <ellipse
+          cx="60"
+          cy="70"
+          rx="20"
+          ry="16"
+          fill="#143726"
+          fill-opacity="0.5"
+        />
+
+        <circle
+          cx="50"
+          cy="64"
+          r="4.5"
+          fill="#143726"
+          fill-opacity="0.8"
+        />
+
+        <circle
+          cx="70"
+          cy="64"
+          r="4.5"
+          fill="#143726"
+          fill-opacity="0.8"
+        />
+
+      </g>
+
+    </svg>
+
+  </div>
+
+
+  <!-- =======================================================
+       TEMPAT PARTIKEL DAUN
+       JavaScript nantinya akan membuat daun-daun kecil secara
+       otomatis dan memasukkannya ke dalam bagian ini.
+       ======================================================= -->
+
+  <div class="pre-particles" id="preParticles"></div>
+
+
+  <!-- =======================================================
+       BAGIAN TENGAH PRELOADER
+       Berisi lingkaran progress, nama, keterangan loading,
+       dan tombol untuk masuk ke website.
+       ======================================================= -->
+
+  <div class="pre-center">
+
+
+    <!-- =====================================================
+         LINGKARAN PROGRESS
+         Lingkaran ini akan berubah dari 0% sampai 100%.
+         ===================================================== -->
+
+    <div class="pre-ring-wrap">
+
+      <svg class="pre-ring" viewBox="0 0 120 120">
+
+        <!-- Jalur lingkaran yang menjadi latar belakang -->
+        <circle
+          class="pre-ring-track"
+          cx="60"
+          cy="60"
+          r="54"
+        />
+
+        <!-- Lingkaran yang akan bergerak sesuai persentase -->
+        <circle
+          class="pre-ring-fill"
+          id="ringFill"
+          cx="60"
+          cy="60"
+          r="54"
+        />
+
+      </svg>
+
+
+      <!-- Ikon daun dan angka persentase loading -->
+
+      <div
+        style="
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+        "
+      >
+
+        <div class="pre-leaf">
+
+          <svg viewBox="0 0 24 24" fill="none">
+
+            <path
+              d="M12 2C7 2 4 6 4 10.5S7.5 20 12 22c4.5-2 8-7 8-11.5S17 2 12 2Z"
+              fill="#8FCB9B"
+            />
+
+          </svg>
+
+        </div>
+
+        <!-- Angka persentase akan diubah oleh JavaScript -->
+        <div class="pre-pct" id="loaderPct">0%</div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Nama pemilik website -->
+
+    <div class="pre-name">
+      Andi Muhammad Hadi Pratama
+    </div>
+
+
+    <!-- Kalimat loading yang akan berganti-ganti -->
+
+    <div class="pre-label" id="preLabel">
+      Menyusuri kanopi hutan...
+    </div>
+
+
+    <!-- =====================================================
+         TOMBOL MASUK
+         Tombol ini baru akan muncul setelah loading selesai.
+         Saat ditekan, akan menjalankan animasi pembukaan.
+         ===================================================== -->
+
+    <button
+      type="button"
+      class="pre-enter"
+      id="preEnter"
+    >
+      Masuk
+
+      <span class="arrow">
+        →
+      </span>
+
+    </button>
+
+  </div>
+
+
+  <!-- =======================================================
+       SILUET BURUNG ENGGANG
+       Diletakkan di sisi kanan layar pembuka.
+       ======================================================= -->
+
+  <div class="pre-animal right" aria-hidden="true">
+
+    <svg viewBox="0 0 140 170" xmlns="http://www.w3.org/2000/svg">
+
+      <g fill="#8FCB9B" fill-opacity="0.55">
+
+        <path d="M70 168 L52 118 Q70 128 88 118 Z"/>
+
+        <ellipse cx="70" cy="104" rx="26" ry="40"/>
+
+        <ellipse
+          cx="42"
+          cy="90"
+          rx="20"
+          ry="13"
+          transform="rotate(-18 42 90)"
+        />
+
+        <circle cx="72" cy="52" r="19"/>
+
+        <path
+          d="M72 44 Q104 34 128 42 Q108 50 96 56 Q106 60 112 68 Q92 66 78 58 Z"
+        />
+
+        <path
+          d="M78 34 Q96 26 112 30 Q98 36 88 42 Z"
+        />
+
+        <circle
+          cx="66"
+          cy="48"
+          r="3"
+          fill="#143726"
+          fill-opacity="0.85"
+        />
+
+      </g>
+
+    </svg>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     EFEK LINGKARAN PEMBUKA
+     Elemen ini awalnya kecil dan tidak terlihat.
+     Saat tombol "Masuk" ditekan, lingkaran akan membesar
+     dari posisi tombol dan menutupi seluruh layar.
+     ========================================================= -->
+
+<div id="preBurst"></div>
+
+
+<!-- =========================================================
+     ADEGAN HUTAN SINGKAT
+     Setelah lingkaran menutupi layar, adegan hutan ini muncul
+     sebentar sebagai transisi sebelum website utama terlihat.
+     ========================================================= -->
+
+<div id="preForestScene" aria-hidden="true">
+
+
+  <!-- Lapisan pohon bagian belakang -->
+
+  <svg
+    class="scene-canopy row2"
+    viewBox="0 0 1600 300"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+
+    <g fill="#DCEBDD" fill-opacity="0.5">
+
+      <circle cx="20" cy="220" r="95"/>
+      <circle cx="150" cy="195" r="120"/>
+      <circle cx="300" cy="225" r="100"/>
+      <circle cx="450" cy="190" r="130"/>
+      <circle cx="610" cy="220" r="105"/>
+      <circle cx="760" cy="195" r="125"/>
+      <circle cx="920" cy="225" r="100"/>
+      <circle cx="1070" cy="190" r="130"/>
+      <circle cx="1230" cy="220" r="105"/>
+      <circle cx="1380" cy="195" r="125"/>
+      <circle cx="1560" cy="220" r="100"/>
+
+    </g>
+
+  </svg>
+
+
+  <!-- Lapisan pohon bagian depan -->
+
+  <svg
+    class="scene-canopy row1"
+    viewBox="0 0 1600 240"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+
+    <g fill="#8FCB9B" fill-opacity="0.55">
+
+      <circle cx="0" cy="185" r="78"/>
+      <circle cx="130" cy="155" r="102"/>
+      <circle cx="280" cy="190" r="86"/>
+      <circle cx="430" cy="150" r="112"/>
+      <circle cx="580" cy="185" r="90"/>
+      <circle cx="730" cy="155" r="108"/>
+      <circle cx="890" cy="190" r="86"/>
+      <circle cx="1040" cy="150" r="112"/>
+      <circle cx="1200" cy="185" r="90"/>
+      <circle cx="1350" cy="155" r="108"/>
+      <circle cx="1500" cy="185" r="86"/>
+      <circle cx="1600" cy="160" r="100"/>
+
+    </g>
+
+  </svg>
+
+
+  <!-- =======================================================
+       ORANGUTAN DI DALAM ADEGAN HUTAN
+       Ditampilkan ketika animasi pembukaan sedang berjalan.
+       ======================================================= -->
+
+  <div
+    class="scene-animal scene-orangutan"
+    aria-hidden="true"
+  >
+
+    <svg
+      viewBox="0 0 120 170"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+
+      <g fill="#F8F4E8" fill-opacity="0.85">
+
+        <path d="M18 96 Q0 130 8 158 Q14 168 24 162 Q18 138 34 106 Z"/>
+
+        <path d="M102 96 Q120 130 112 158 Q106 168 96 162 Q102 138 86 106 Z"/>
+
+        <ellipse cx="60" cy="122" rx="40" ry="44"/>
+
+        <ellipse cx="60" cy="66" rx="32" ry="29"/>
+
+        <ellipse
+          cx="60"
+          cy="70"
+          rx="20"
+          ry="16"
+          fill="#143726"
+          fill-opacity="0.55"
+        />
+
+        <circle
+          cx="50"
+          cy="64"
+          r="4.5"
+          fill="#143726"
+          fill-opacity="0.9"
+        />
+
+        <circle
+          cx="70"
+          cy="64"
+          r="4.5"
+          fill="#143726"
+          fill-opacity="0.9"
+        />
+
+      </g>
+
+    </svg>
+
+  </div>
+
+
+  <!-- =======================================================
+       BURUNG ENGGANG DI DALAM ADEGAN HUTAN
+       Burung akan terlihat seolah-olah sedang terbang.
+       ======================================================= -->
+
+  <div
+    class="scene-animal scene-hornbill"
+    aria-hidden="true"
+  >
+
+    <svg
+      viewBox="0 0 140 170"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+
+      <g fill="#F8F4E8" fill-opacity="0.85">
+
+        <path d="M70 168 L52 118 Q70 128 88 118 Z"/>
+
+        <ellipse cx="70" cy="104" rx="26" ry="40"/>
+
+        <ellipse
+          cx="42"
+          cy="90"
+          rx="20"
+          ry="13"
+          transform="rotate(-18 42 90)"
+        />
+
+        <circle cx="72" cy="52" r="19"/>
+
+        <path
+          d="M72 44 Q104 34 128 42 Q108 50 96 56 Q106 60 112 68 Q92 66 78 58 Z"
+        />
+
+        <path
+          d="M78 34 Q96 26 112 30 Q98 36 88 42 Z"
+        />
+
+        <circle
+          cx="66"
+          cy="48"
+          r="3"
+          fill="#143726"
+          fill-opacity="0.9"
+        />
+
+      </g>
+
+    </svg>
+
+  </div>
+
+
+  <!-- =======================================================
+       KUPU-KUPU
+       Elemen kecil ini ditambahkan agar adegan pembukaan
+       terasa lebih hidup dan tidak terlalu kosong.
+       ======================================================= -->
+
+  <div
+    class="scene-animal scene-butterfly"
+    aria-hidden="true"
+  >
+
+    <svg
+      viewBox="0 0 60 44"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+
+      <g fill="#E7A84E" fill-opacity="0.9">
+
+        <ellipse cx="18" cy="16" rx="16" ry="12"/>
+        <ellipse cx="42" cy="16" rx="16" ry="12"/>
+        <ellipse cx="18" cy="32" rx="11" ry="8"/>
+        <ellipse cx="42" cy="32" rx="11" ry="8"/>
+
+      </g>
+
+      <rect
+        x="28"
+        y="8"
+        width="4"
+        height="30"
+        rx="2"
+        fill="#143726"
+        fill-opacity="0.7"
+      />
+
+    </svg>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     GARIS PROGRESS NAVIGASI
+     Garis tipis ini akan berjalan ketika pengguna menekan
+     salah satu menu navigasi seperti Tentang, Skill, Proyek,
+     atau Kontak.
+     ========================================================= -->
+
+<div id="navProgress"></div>
+
+
+<!-- =========================================================
+     BAGIAN NAVIGASI UTAMA
+     Navigasi akan tetap berada di bagian atas ketika halaman
+     digulir ke bawah.
+     ========================================================= -->
 
 <header class="nav" id="siteNav">
 
-  <!-- Logo dan nama -->
+
+  <!-- Logo dan nama singkat -->
+
   <a href="#top" class="logo">
 
     <svg viewBox="0 0 24 24" fill="none">
+
       <path
         d="M12 2C7 2 4 6 4 10.5S7.5 20 12 22c4.5-2 8-7 8-11.5S17 2 12 2Z"
         fill="#2F6B49"
       />
+
     </svg>
 
     Hadi Pratama
@@ -51,18 +530,24 @@
 
 
   <!-- Daftar menu navigasi -->
+
   <nav class="nav-links">
 
     <a href="#top">Beranda</a>
+
     <a href="#tentang">Tentang</a>
+
     <a href="#skill">Skill</a>
+
     <a href="#proyek">Proyek</a>
+
     <a href="#kontak">Kontak</a>
 
   </nav>
 
 
-  <!-- Tombol untuk menuju bagian kontak -->
+  <!-- Tombol cepat untuk menuju bagian kontak -->
+
   <a href="#kontak" class="nav-cta">
     Hubungi Saya
   </a>
@@ -70,22 +555,28 @@
 </header>
 
 
-
-<!-- =====================================================
-     BAGIAN BERANDA
-     Bagian pertama yang dilihat ketika website dibuka
-     ===================================================== -->
+<!-- =========================================================
+     BAGIAN BERANDA / HERO
+     Ini adalah bagian pertama dari portofolio setelah animasi
+     pembuka selesai.
+     ========================================================= -->
 
 <section class="hero" id="top">
 
 
-  <!-- Tempat untuk membuat efek kunang-kunang -->
-  <div class="fireflies" id="fireflies"></div>
+  <!-- Tempat JavaScript membuat kunang-kunang -->
+
+  <div
+    class="fireflies"
+    id="fireflies"
+  ></div>
 
 
-  <!-- ===================================================
+  <!-- =======================================================
        LAPISAN POHON PALING BELAKANG
-       =================================================== -->
+       Lapisan ini dibuat paling pudar agar menghasilkan
+       kesan kedalaman seperti kanopi hutan.
+       ======================================================= -->
 
   <svg
     class="canopy back"
@@ -114,10 +605,12 @@
   </svg>
 
 
-
-  <!-- ===================================================
+  <!-- =======================================================
        LAPISAN POHON BAGIAN TENGAH
-       =================================================== -->
+       Lapisan ini berada di antara pohon belakang dan pohon
+       depan sehingga ketika digerakkan akan terlihat seperti
+       memiliki efek kedalaman.
+       ======================================================= -->
 
   <svg
     class="canopy mid"
@@ -146,10 +639,11 @@
   </svg>
 
 
-
-  <!-- ===================================================
+  <!-- =======================================================
        LAPISAN POHON PALING DEPAN
-       =================================================== -->
+       Lapisan ini dibuat lebih jelas dan akan bergerak lebih
+       cepat ketika halaman digulir.
+       ======================================================= -->
 
   <svg
     class="canopy front"
@@ -178,20 +672,30 @@
   </svg>
 
 
-
-  <!-- ===================================================
-       TEKS UTAMA BAGIAN BERANDA
-       =================================================== -->
+  <!-- =======================================================
+       TEKS UTAMA BERANDA
+       Nama, deskripsi singkat, dan dua tombol utama.
+       ======================================================= -->
 
   <div class="hero-content">
+
+
+    <!-- Label kecil di atas nama -->
 
     <p class="eyebrow">
       Portofolio Digital · Kalimantan Timur
     </p>
 
+
+    <!-- Nama besar pemilik portofolio -->
+
     <h1 class="hero-title">
-      Andi Muhammad Hadi <em>Pratama</em>
+      Andi Muhammad Hadi
+      <em>Pratama</em>
     </h1>
+
+
+    <!-- Deskripsi singkat -->
 
     <p class="hero-sub">
       Web developer pemula yang tumbuh di antara rimbunnya
@@ -200,14 +704,21 @@
     </p>
 
 
-    <!-- Tombol pada bagian beranda -->
+    <!-- Tombol menuju proyek dan kontak -->
+
     <div class="hero-actions">
 
-      <a href="#proyek" class="btn btn-primary">
+      <a
+        href="#proyek"
+        class="btn btn-primary"
+      >
         Lihat Proyek
       </a>
 
-      <a href="#kontak" class="btn btn-ghost">
+      <a
+        href="#kontak"
+        class="btn btn-ghost"
+      >
         Hubungi Saya
       </a>
 
@@ -216,11 +727,17 @@
   </div>
 
 
+  <!-- =======================================================
+       PETUNJUK UNTUK MENGGULIR
+       Tulisan dan garis kecil ini menunjukkan bahwa masih
+       ada bagian lain di bawah halaman.
+       ======================================================= -->
 
-  <!-- Petunjuk untuk menggulir halaman -->
   <div class="scroll-cue">
 
-    <span>Gulir</span>
+    <span>
+      Gulir
+    </span>
 
     <span class="stem"></span>
 
@@ -229,18 +746,22 @@
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================================================
      BAGIAN TENTANG SAYA
-     Berisi foto dan informasi tentang diri sendiri
-     ===================================================== -->
+     Menampilkan foto dan cerita singkat mengenai diri.
+     ========================================================= -->
 
 <section class="about" id="tentang">
 
   <div class="wrap">
 
 
-    <!-- Bagian foto -->
+    <!-- =====================================================
+         FOTO PROFIL
+         Foto dibungkus dengan bentuk organik dan memiliki
+         lingkaran dekorasi yang berputar.
+         ===================================================== -->
+
     <div class="about-figure reveal reveal-left">
 
       <div class="ring"></div>
@@ -257,52 +778,89 @@
     </div>
 
 
+    <!-- =====================================================
+         INFORMASI TENTANG DIRI
+         Berisi perkenalan dan beberapa statistik sederhana.
+         ===================================================== -->
 
-    <!-- Bagian tulisan tentang diri sendiri -->
     <div class="about-copy reveal reveal-right">
 
       <p class="eyebrow">
         Kisah Singkat
       </p>
 
-      <h2>Tentang Saya</h2>
+      <h2>
+        Tentang Saya
+      </h2>
 
 
       <p>
-        <span class="drop">S</span>aya Andi Muhammad Hadi Pratama,
-        tinggal di Kalimantan Timur — tanah tempat hutan hujan tropis
-        tumbuh berdampingan dengan denyut pembangunan baru Indonesia.
-        Dari sanalah saya belajar bahwa sesuatu yang rapi dan kuat
-        selalu tumbuh dari fondasi yang sabar.
+
+        <span class="drop">
+          S
+        </span>
+
+        aya Andi Muhammad Hadi Pratama, tinggal di Kalimantan
+        Timur — tanah tempat hutan hujan tropis tumbuh
+        berdampingan dengan denyut pembangunan baru Indonesia.
+        Dari sanalah saya belajar bahwa sesuatu yang rapi dan
+        kuat selalu tumbuh dari fondasi yang sabar.
+
       </p>
 
 
       <p>
+
         Saat ini saya sedang menekuni dunia pengembangan web —
         mulai dari menata struktur HTML, mewarnai dan merapikan
         tampilan lewat CSS, hingga menghidupkan interaksi dengan
-        JavaScript. Setiap proyek saya perlakukan seperti merawat
-        satu petak kecil hutan: butuh ketelitian, kesabaran,
-        dan ruang untuk terus tumbuh.
+        JavaScript. Setiap proyek saya perlakukan seperti
+        merawat satu petak kecil hutan: butuh ketelitian,
+        kesabaran, dan ruang untuk terus tumbuh.
+
       </p>
 
 
-      <!-- Statistik sederhana -->
+      <!-- Statistik kemampuan -->
+
       <div class="about-stats">
 
         <div>
-          <strong>3+</strong>
-          <span>Skill Inti</span>
+
+          <strong>
+            3+
+          </strong>
+
+          <span>
+            Skill Inti
+          </span>
+
         </div>
 
-        <div>
-          <strong>100%</strong>
-          <span>Semangat Belajar</span>
-        </div>
 
         <div>
-          <strong>∞</strong>
-          <span>Rasa Ingin Tahu</span>
+
+          <strong>
+            100%
+          </strong>
+
+          <span>
+            Semangat Belajar
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <strong>
+            ∞
+          </strong>
+
+          <span>
+            Rasa Ingin Tahu
+          </span>
+
         </div>
 
       </div>
@@ -314,11 +872,12 @@
 </section>
 
 
-
-<!-- =====================================================
-     BAGIAN KEMAMPUAN
-     Menampilkan kemampuan HTML, CSS, dan JavaScript
-     ===================================================== -->
+<!-- =========================================================
+     BAGIAN KEMAMPUAN / SKILL
+     Menampilkan kemampuan HTML, CSS, dan JavaScript dalam
+     bentuk batang progress yang akan tumbuh ketika bagian
+     tersebut terlihat di layar.
+     ========================================================= -->
 
 <section class="skills" id="skill">
 
@@ -326,29 +885,40 @@
 
 
     <!-- Judul bagian kemampuan -->
+
     <div class="section-head center reveal">
 
       <p class="eyebrow">
         Yang Sudah Ditumbuhkan
       </p>
 
-      <h2>Kemampuan</h2>
+      <h2>
+        Kemampuan
+      </h2>
 
       <p>
-        Setiap batang keahlian ini tumbuh perlahan lewat latihan —
-        semakin sering dirawat, semakin kuat akarnya.
+        Setiap batang keahlian ini tumbuh perlahan lewat
+        latihan — semakin sering dirawat, semakin kuat akarnya.
       </p>
 
     </div>
 
 
+    <!-- =====================================================
+         DAFTAR KEMAMPUAN
+         Nilai data-target akan digunakan JavaScript untuk
+         menentukan panjang progress bar.
+         ===================================================== -->
 
-    <!-- Daftar kemampuan -->
     <div class="skills-grid">
 
 
       <!-- Kemampuan HTML -->
-      <div class="vine-row reveal" data-skill>
+
+      <div
+        class="vine-row reveal"
+        data-skill
+      >
 
         <span class="skill-name">
           HTML
@@ -363,16 +933,22 @@
 
         </div>
 
-        <span class="pct">
+        <span
+          class="pct"
+          data-pct
+        >
           92%
         </span>
 
       </div>
 
 
-
       <!-- Kemampuan CSS -->
-      <div class="vine-row reveal" data-skill>
+
+      <div
+        class="vine-row reveal"
+        data-skill
+      >
 
         <span class="skill-name">
           CSS
@@ -387,16 +963,22 @@
 
         </div>
 
-        <span class="pct">
+        <span
+          class="pct"
+          data-pct
+        >
           80%
         </span>
 
       </div>
 
 
-
       <!-- Kemampuan JavaScript -->
-      <div class="vine-row reveal" data-skill>
+
+      <div
+        class="vine-row reveal"
+        data-skill
+      >
 
         <span class="skill-name">
           JavaScript
@@ -411,7 +993,10 @@
 
         </div>
 
-        <span class="pct">
+        <span
+          class="pct"
+          data-pct
+        >
           60%
         </span>
 
@@ -420,14 +1005,28 @@
     </div>
 
 
+    <!-- =====================================================
+         TEKNOLOGI DAN KEMAMPUAN TAMBAHAN
+         Ditampilkan sebagai badge kecil di bawah progress bar.
+         ===================================================== -->
 
-    <!-- Kemampuan tambahan -->
     <div class="tools-note reveal">
 
-      <span>Responsive Design</span>
-      <span>Git &amp; GitHub</span>
-      <span>Figma Dasar</span>
-      <span>Animasi Scroll</span>
+      <span>
+        Responsive Design
+      </span>
+
+      <span>
+        Git &amp; GitHub
+      </span>
+
+      <span>
+        Figma Dasar
+      </span>
+
+      <span>
+        Animasi Scroll
+      </span>
 
     </div>
 
@@ -436,11 +1035,10 @@
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================================================
      BAGIAN PROYEK
-     Menampilkan beberapa proyek yang pernah dibuat
-     ===================================================== -->
+     Menampilkan beberapa contoh proyek yang sudah dibuat.
+     ========================================================= -->
 
 <section class="projects" id="proyek">
 
@@ -448,13 +1046,16 @@
 
 
     <!-- Judul bagian proyek -->
+
     <div class="section-head reveal">
 
       <p class="eyebrow">
         Katalog Karya
       </p>
 
-      <h2>Proyek Pilihan</h2>
+      <h2>
+        Proyek Pilihan
+      </h2>
 
       <p>
         Beberapa hasil latihan yang sudah dirapikan dan dicatat
@@ -464,12 +1065,19 @@
     </div>
 
 
+    <!-- =====================================================
+         KUMPULAN KARTU PROYEK
+         Setiap kartu memiliki nomor, judul, deskripsi,
+         teknologi yang digunakan, dan tombol detail.
+         ===================================================== -->
 
-    <!-- Daftar kartu proyek -->
     <div class="project-grid stagger">
 
 
-      <!-- Proyek pertama -->
+      <!-- ===================================================
+           PROYEK 01
+           =================================================== -->
+
       <article
         class="specimen reveal"
         style="--i:0"
@@ -491,21 +1099,34 @@
 
         <div class="chips">
 
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>Responsive</span>
+          <span>
+            HTML
+          </span>
+
+          <span>
+            CSS
+          </span>
+
+          <span>
+            Responsive
+          </span>
 
         </div>
 
-        <a href="#" class="go">
+        <a
+          href="#"
+          class="go"
+        >
           Lihat Detail →
         </a>
 
       </article>
 
 
+      <!-- ===================================================
+           PROYEK 02
+           =================================================== -->
 
-      <!-- Proyek kedua -->
       <article
         class="specimen reveal"
         style="--i:1"
@@ -527,21 +1148,34 @@
 
         <div class="chips">
 
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
+          <span>
+            HTML
+          </span>
+
+          <span>
+            CSS
+          </span>
+
+          <span>
+            JavaScript
+          </span>
 
         </div>
 
-        <a href="#" class="go">
+        <a
+          href="#"
+          class="go"
+        >
           Lihat Detail →
         </a>
 
       </article>
 
 
+      <!-- ===================================================
+           PROYEK 03
+           =================================================== -->
 
-      <!-- Proyek ketiga -->
       <article
         class="specimen reveal"
         style="--i:2"
@@ -563,12 +1197,20 @@
 
         <div class="chips">
 
-          <span>JavaScript</span>
-          <span>LocalStorage</span>
+          <span>
+            JavaScript
+          </span>
+
+          <span>
+            LocalStorage
+          </span>
 
         </div>
 
-        <a href="#" class="go">
+        <a
+          href="#"
+          class="go"
+        >
           Lihat Detail →
         </a>
 
@@ -581,18 +1223,20 @@
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================================================
      BAGIAN KONTAK
-     Berisi formulir pesan dan peta
-     ===================================================== -->
+     Berisi formulir untuk mengirim pesan dan peta lokasi.
+     ========================================================= -->
 
 <section class="contact" id="kontak">
 
   <div class="wrap">
 
 
-    <!-- Judul bagian kontak -->
+    <!-- =====================================================
+         JUDUL BAGIAN KONTAK
+         ===================================================== -->
+
     <div
       style="grid-column:1/-1;"
       class="section-head reveal"
@@ -602,7 +1246,9 @@
         Mari Terhubung
       </p>
 
-      <h2>Kontak</h2>
+      <h2>
+        Kontak
+      </h2>
 
       <p>
         Ada proyek, kolaborasi, atau sekadar ingin menyapa?
@@ -612,10 +1258,11 @@
     </div>
 
 
-
-    <!-- =================================================
+    <!-- =====================================================
          FORMULIR KONTAK
-         ================================================= -->
+         Form ini menggunakan FormSubmit untuk mengirimkan
+         data yang dimasukkan ke alamat email tujuan.
+         ===================================================== -->
 
     <form
       class="signpost reveal reveal-left"
@@ -625,9 +1272,12 @@
 
 
       <!-- Kolom nama -->
+
       <div class="field">
 
-        <label>Nama</label>
+        <label>
+          Nama
+        </label>
 
         <input
           type="text"
@@ -639,9 +1289,12 @@
 
 
       <!-- Kolom email -->
+
       <div class="field">
 
-        <label>Email</label>
+        <label>
+          Email
+        </label>
 
         <input
           type="email"
@@ -653,9 +1306,12 @@
 
 
       <!-- Kolom umur -->
+
       <div class="field">
 
-        <label>Umur</label>
+        <label>
+          Umur
+        </label>
 
         <input
           type="number"
@@ -667,9 +1323,12 @@
 
 
       <!-- Pilihan gender -->
+
       <div class="field">
 
-        <label>Gender</label>
+        <label>
+          Gender
+        </label>
 
         <select name="gender">
 
@@ -691,9 +1350,12 @@
 
 
       <!-- Kolom pesan -->
+
       <div class="field">
 
-        <label>Pesan</label>
+        <label>
+          Pesan
+        </label>
 
         <textarea
           name="pesan"
@@ -705,6 +1367,7 @@
 
 
       <!-- Tombol mengirim pesan -->
+
       <button
         type="submit"
         class="submit-btn"
@@ -715,14 +1378,20 @@
     </form>
 
 
-
-    <!-- =================================================
+    <!-- =====================================================
          PETA LOKASI
-         ================================================= -->
+         Menampilkan lokasi SMK IDN Boarding School menggunakan
+         Google Maps.
+         ===================================================== -->
 
     <div class="map-card reveal reveal-right">
 
-     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253.87415169228055!2d116.20315756270233!3d-1.8963938858605154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df047b71cc023b5%3A0xc5bf66dcbab137d7!2sDhany%20Makassar!5e1!3m2!1sid!2sid!4v1787815502665!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12077.725685717276!2d107.03813559999999!3d-6.5252823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69bc6e5be3d9bd%3A0x6b9881dabd801476!2sSMK%20IDN%20Boarding%20School!5e1!3m2!1sid!2sid!4v1786603954258!5m2!1sid!2sid"
+        referrerpolicy="strict-origin-when-cross-origin"
+        loading="lazy"
+      ></iframe>
+
     </div>
 
   </div>
@@ -730,10 +1399,10 @@
 </section>
 
 
-
-<!-- =====================================================
-     BAGIAN KAKI WEBSITE
-     ===================================================== -->
+<!-- =========================================================
+     BAGIAN FOOTER
+     Menampilkan informasi hak cipta di bagian paling bawah.
+     ========================================================= -->
 
 <footer>
 
@@ -748,20 +1417,643 @@
 </footer>
 
 
+<!-- =========================================================
+     JAVASCRIPT WEBSITE
+     JavaScript sengaja digabung di dalam index.html sesuai
+     permintaan, sehingga kita hanya membutuhkan dua file:
+     
+     1. index.html
+     2. style.css
 
-<!-- =====================================================
-     JAVASCRIPT
-     JavaScript tetap berada di file index.html
-     ===================================================== -->
-
+     Bagian JavaScript ini mengatur semua interaksi dan animasi.
+     ========================================================= -->
 
 <script>
 
 
-  // =====================================================
-  // MENGUBAH LATAR BELAKANG NAVIGASI SAAT HALAMAN
-  // DIGULIR KE BAWAH
-  // =====================================================
+  /* =========================================================
+     BAGIAN 1 — ANIMASI PRELOADER
+
+     Mengatur:
+     - Persentase loading dari 0 sampai 100%.
+     - Pergerakan lingkaran loading.
+     - Tulisan yang berganti-ganti.
+     - Partikel daun.
+     - Tombol "Masuk".
+     ========================================================= */
+
+  (function initPreloader(){
+
+    const pre =
+      document.getElementById('preloader');
+
+    const pctEl =
+      document.getElementById('loaderPct');
+
+    const ringFill =
+      document.getElementById('ringFill');
+
+    const labelEl =
+      document.getElementById('preLabel');
+
+    const particleField =
+      document.getElementById('preParticles');
+
+    const reduceMotion =
+      window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches;
+
+
+    /*
+      Keliling lingkaran.
+
+      Nilai ini disesuaikan dengan radius lingkaran SVG
+      yang digunakan pada bagian preloader.
+    */
+
+    const RING_CIRCUMFERENCE = 339.3;
+
+
+    /*
+      Jika pengguna mengaktifkan pengaturan "kurangi gerakan"
+      pada perangkatnya, animasi pembuka dilewati agar website
+      tetap nyaman digunakan.
+    */
+
+    if(reduceMotion){
+
+      pre.style.display = 'none';
+
+      document.body.style.overflow = '';
+
+      return;
+
+    }
+
+
+    /* =======================================================
+       MEMBUAT PARTIKEL DAUN
+
+       Jumlah daun dibuat lebih sedikit pada layar kecil
+       agar tidak terlalu berat untuk perangkat.
+       ======================================================= */
+
+    const leafCount =
+      window.innerWidth < 700
+        ? 10
+        : 18;
+
+
+    for(
+      let i = 0;
+      i < leafCount;
+      i++
+    ){
+
+      const leaf =
+        document.createElement('span');
+
+
+      leaf.className =
+        'pre-leaf-bit';
+
+
+      /*
+        Menentukan posisi awal daun secara acak.
+      */
+
+      leaf.style.left =
+        (Math.random() * 100) + '%';
+
+
+      /*
+        Menentukan arah gerakan daun ke kiri atau kanan.
+      */
+
+      leaf.style.setProperty(
+        '--sway',
+        (Math.random() * 80 - 40) + 'px'
+      );
+
+
+      /*
+        Menentukan durasi jatuh setiap daun.
+      */
+
+      leaf.style.animationDuration =
+        (5 + Math.random() * 4) + 's';
+
+
+      /*
+        Menentukan kapan animasi daun mulai.
+      */
+
+      leaf.style.animationDelay =
+        (Math.random() * 5) + 's';
+
+
+      /*
+        Memasukkan daun yang sudah dibuat ke dalam
+        tempat partikel.
+      */
+
+      particleField.appendChild(leaf);
+
+    }
+
+
+    /* =======================================================
+       KALIMAT YANG BERGANTI SAAT LOADING
+
+       Kalimat ini membuat proses loading terasa lebih hidup.
+       ======================================================= */
+
+    const messages = [
+
+      'Menyusuri kanopi hutan...',
+
+      'Mendengar kicau enggang...',
+
+      'Menghitung tetes embun pagi...',
+
+      'Menyapa orangutan di dahan...',
+
+      'Menata dedaunan digital...',
+
+      'Hampir sampai di pondok...'
+
+    ];
+
+
+    let msgIndex = 0;
+
+
+    /*
+      Setiap 900 milidetik, tulisan akan diganti dengan
+      kalimat berikutnya.
+    */
+
+    const msgTimer =
+      setInterval(() => {
+
+        msgIndex =
+          (msgIndex + 1) %
+          messages.length;
+
+
+        /*
+          Tulisan dibuat transparan terlebih dahulu agar
+          pergantian kalimat terasa seperti fade.
+        */
+
+        labelEl.style.opacity = '0';
+
+
+        setTimeout(() => {
+
+          labelEl.textContent =
+            messages[msgIndex];
+
+          labelEl.style.opacity =
+            '1';
+
+        }, 400);
+
+      }, 900);
+
+
+    /*
+      Mengunci scroll sementara agar pengguna tidak dapat
+      menggulir halaman ketika animasi pembuka berlangsung.
+    */
+
+    document.body.style.overflow =
+      'hidden';
+
+
+    /*
+      Total waktu proses loading.
+
+      4200 berarti sekitar 4,2 detik.
+    */
+
+    const duration =
+      4200;
+
+
+    /*
+      Menyimpan waktu ketika proses loading dimulai.
+    */
+
+    const start =
+      performance.now();
+
+
+    /*
+      Fungsi easing agar pergerakan persentase terlihat
+      lebih alami dan tidak terasa terlalu kaku.
+    */
+
+    function easeOutCubic(t){
+
+      return 1 -
+        Math.pow(1 - t, 3);
+
+    }
+
+
+    /*
+      Fungsi ini terus dijalankan selama proses loading.
+    */
+
+    function tick(now){
+
+      const elapsed =
+        now - start;
+
+
+      /*
+        Mengubah waktu yang sudah berlalu menjadi nilai
+        antara 0 sampai 1.
+      */
+
+      const rawT =
+        Math.min(
+          1,
+          elapsed / duration
+        );
+
+
+      /*
+        Mengubah nilai menjadi persentase 0 sampai 100.
+      */
+
+      const pct =
+        Math.round(
+          easeOutCubic(rawT) * 100
+        );
+
+
+      /*
+        Menampilkan persentase pada bagian tengah.
+      */
+
+      pctEl.textContent =
+        pct + '%';
+
+
+      /*
+        Mengubah posisi lingkaran progress sesuai
+        persentase loading.
+      */
+
+      ringFill.style.strokeDashoffset =
+        RING_CIRCUMFERENCE *
+        (1 - pct / 100);
+
+
+      /*
+        Jika loading belum selesai, jalankan kembali
+        fungsi tick pada frame berikutnya.
+      */
+
+      if(rawT < 1){
+
+        requestAnimationFrame(tick);
+
+      }else{
+
+        /*
+          Menghentikan pergantian kalimat.
+        */
+
+        clearInterval(msgTimer);
+
+
+        /*
+          Menyembunyikan tulisan lama.
+        */
+
+        labelEl.style.opacity =
+          '0';
+
+
+        setTimeout(() => {
+
+          /*
+            Mengganti tulisan terakhir setelah loading selesai.
+          */
+
+          labelEl.textContent =
+            'Selamat datang.';
+
+
+          labelEl.style.opacity =
+            '1';
+
+        }, 400);
+
+
+        /*
+          Menampilkan tombol "Masuk".
+        */
+
+        document
+          .getElementById('preEnter')
+          .classList
+          .add('show');
+
+      }
+
+    }
+
+
+    /*
+      Memulai proses animasi loading.
+    */
+
+    requestAnimationFrame(tick);
+
+  })();
+
+
+  /* =========================================================
+     BAGIAN 2 — ANIMASI TOMBOL "MASUK"
+
+     Ketika tombol ditekan:
+     1. Tombol dinonaktifkan.
+     2. Lingkaran muncul dari posisi tombol.
+     3. Lingkaran membesar memenuhi layar.
+     4. Adegan hutan muncul sebentar.
+     5. Adegan hutan menghilang.
+     6. Website utama akhirnya terlihat.
+     ========================================================= */
+
+  (function initBurstReveal(){
+
+    const enterBtn =
+      document.getElementById('preEnter');
+
+    const burst =
+      document.getElementById('preBurst');
+
+    const preloader =
+      document.getElementById('preloader');
+
+    const forestScene =
+      document.getElementById('preForestScene');
+
+
+    /*
+      Jika tombol tidak ditemukan, hentikan fungsi agar
+      tidak menyebabkan JavaScript mengalami error.
+    */
+
+    if(!enterBtn){
+
+      return;
+
+    }
+
+
+    /*
+      Menjalankan animasi ketika tombol "Masuk" ditekan.
+    */
+
+    enterBtn.addEventListener(
+      'click',
+      () => {
+
+
+        /*
+          Mencegah tombol ditekan lebih dari satu kali.
+        */
+
+        enterBtn.disabled =
+          true;
+
+        enterBtn.style.pointerEvents =
+          'none';
+
+
+        /*
+          Mengambil posisi tombol pada layar.
+        */
+
+        const rect =
+          enterBtn.getBoundingClientRect();
+
+
+        /*
+          Menghitung titik tengah tombol.
+        */
+
+        const cx =
+          rect.left +
+          rect.width / 2;
+
+        const cy =
+          rect.top +
+          rect.height / 2;
+
+
+        /*
+          Menempatkan titik awal lingkaran burst
+          tepat di tengah tombol.
+        */
+
+        burst.style.top =
+          cy + 'px';
+
+        burst.style.left =
+          cx + 'px';
+
+
+        /*
+          Memulai tahap pertama:
+          lingkaran berkembang dan menutup layar.
+        */
+
+        requestAnimationFrame(() => {
+
+          burst.classList.add('grow');
+
+        });
+
+
+        /*
+          Setelah lingkaran cukup besar, preloader disembunyikan
+          dan adegan hutan ditampilkan.
+        */
+
+        setTimeout(() => {
+
+
+          preloader.style.display =
+            'none';
+
+
+          forestScene.classList.add(
+            'show'
+          );
+
+
+          /*
+            Setelah adegan hutan tampil beberapa saat,
+            adegan tersebut mulai menghilang.
+          */
+
+          setTimeout(() => {
+
+
+            forestScene.classList.remove(
+              'show'
+            );
+
+
+            /*
+              Membuka animasi akhir sehingga website utama
+              terlihat dengan lebih halus.
+            */
+
+            burst.classList.add(
+              'open'
+            );
+
+
+            /*
+              Setelah animasi selesai, elemen transisi
+              tidak lagi diperlukan.
+            */
+
+            setTimeout(() => {
+
+              burst.style.display =
+                'none';
+
+              forestScene.style.display =
+                'none';
+
+
+              /*
+                Membuka kembali kemampuan scroll.
+              */
+
+              document.body.style.overflow =
+                '';
+
+            }, 900);
+
+
+          }, 550);
+
+
+        }, 850);
+
+      }
+    );
+
+  })();
+
+
+  /* =========================================================
+     BAGIAN 3 — GARIS PROGRESS NAVIGASI
+
+     Ketika pengguna menekan menu navigasi yang mengarah
+     ke bagian tertentu di halaman, garis tipis akan bergerak
+     dari kiri ke kanan sebagai tanda perpindahan halaman.
+     ========================================================= */
+
+  (function initNavProgress(){
+
+    const bar =
+      document.getElementById('navProgress');
+
+
+    /*
+      Mengambil semua link yang memiliki tujuan berupa
+      tanda pagar (#), contohnya #tentang atau #proyek.
+    */
+
+    document
+      .querySelectorAll('a[href^="#"]')
+      .forEach(link => {
+
+
+        link.addEventListener(
+          'click',
+          () => {
+
+
+            /*
+              Mengembalikan garis ke awal.
+            */
+
+            bar.style.transition =
+              'none';
+
+            bar.style.width =
+              '0%';
+
+            bar.style.opacity =
+              '1';
+
+
+            /*
+              Memulai animasi garis dari 0% ke 100%.
+            */
+
+            requestAnimationFrame(() => {
+
+              bar.style.transition =
+                'width 0.5s ease, opacity 0.3s ease';
+
+              bar.style.width =
+                '100%';
+
+            });
+
+
+            /*
+              Setelah animasi selesai, garis dibuat transparan.
+            */
+
+            setTimeout(() => {
+
+              bar.style.opacity =
+                '0';
+
+            }, 500);
+
+
+            /*
+              Mengembalikan lebar garis ke 0 agar siap
+              digunakan kembali ketika menu ditekan.
+            */
+
+            setTimeout(() => {
+
+              bar.style.width =
+                '0%';
+
+            }, 850);
+
+          }
+        );
+
+      });
+
+  })();
+
+
+  /* =========================================================
+     BAGIAN 4 — LATAR NAVIGASI SAAT HALAMAN DIGULIR
+
+     Ketika halaman sudah digulir lebih dari 40 piksel,
+     navigasi akan mendapatkan latar belakang transparan
+     dan efek blur.
+     ========================================================= */
 
   const nav =
     document.getElementById('siteNav');
@@ -780,154 +2072,222 @@
   );
 
 
+  /* =========================================================
+     BAGIAN 5 — ANIMASI MUNCUL SAAT SCROLL
 
-  // =====================================================
-  // ANIMASI MUNCUL SAAT BAGIAN WEBSITE TERLIHAT
-  // =====================================================
+     Semua elemen yang memiliki class "reveal" awalnya
+     disembunyikan sedikit.
+
+     Ketika elemen tersebut masuk ke layar:
+     - transparansi berubah menjadi terlihat,
+     - posisi kembali normal,
+     - progress skill mulai bergerak.
+     ========================================================= */
 
   const revealEls =
-    document.querySelectorAll('.reveal');
+    document.querySelectorAll(
+      '.reveal'
+    );
 
 
   const io =
     new IntersectionObserver(
       (entries) => {
 
-        entries.forEach(entry => {
 
-          if (entry.isIntersecting) {
-
-            entry.target.classList.add(
-              'in-view'
-            );
+        entries.forEach(
+          entry => {
 
 
-            // =================================================
-            // MENJALANKAN ANIMASI BATANG KEMAMPUAN
-            // =================================================
+            /*
+              Mengecek apakah elemen sudah terlihat
+              di dalam layar.
+            */
 
-            if (
-              entry.target.hasAttribute(
-                'data-skill'
-              )
-            ) {
-
-              const fill =
-                entry.target.querySelector(
-                  '.vine-fill'
-                );
+            if(entry.isIntersecting){
 
 
-              if (fill) {
+              /*
+                Menambahkan class agar animasi muncul
+                dapat dijalankan oleh CSS.
+              */
 
-                fill.style.width =
-                  fill.dataset.target + '%';
+              entry.target.classList.add(
+                'in-view'
+              );
+
+
+              /*
+                Jika elemen merupakan bar skill,
+                ambil nilai data-target lalu ubah lebar
+                progress bar sesuai nilai tersebut.
+              */
+
+              if(
+                entry.target.hasAttribute(
+                  'data-skill'
+                )
+              ){
+
+                const fill =
+                  entry.target.querySelector(
+                    '.vine-fill'
+                  );
+
+
+                if(fill){
+
+                  fill.style.width =
+                    fill.dataset.target +
+                    '%';
+
+                }
 
               }
 
+
+              /*
+                Setelah animasi dijalankan, elemen tidak
+                perlu diamati kembali.
+              */
+
+              io.unobserve(
+                entry.target
+              );
+
             }
 
-
-            // Berhenti mengamati setelah animasi dijalankan
-            io.unobserve(entry.target);
-
           }
-
-        });
+        );
 
       },
       {
-        threshold:0.2
+        threshold: 0.2
       }
     );
 
 
-  // Menjalankan pengamatan pada semua elemen
-  revealEls.forEach(el => {
+  /*
+    Mulai mengamati semua elemen yang mempunyai
+    class "reveal".
+  */
 
-    io.observe(el);
+  revealEls.forEach(
+    el => io.observe(el)
+  );
 
-  });
 
+  /* =========================================================
+     BAGIAN 6 — EFEK PARALLAX KANOPI HUTAN
 
+     Tiga lapisan pohon bergerak dengan kecepatan berbeda
+     ketika halaman digulir.
 
-  // =====================================================
-  // ANIMASI PARALLAX UNTUK LAPISAN POHON
-  // Lapisan pohon bergerak berbeda ketika halaman digulir
-  // =====================================================
+     Lapisan belakang bergerak paling lambat.
+     Lapisan tengah bergerak sedikit lebih cepat.
+     Lapisan depan bergerak paling cepat.
+     ========================================================= */
 
   const layers = [
 
     {
-      el:document.querySelector(
-        '.canopy.back'
-      ),
-      speed:0.12
+      el:
+        document.querySelector(
+          '.canopy.back'
+        ),
+
+      speed:
+        0.12
     },
 
     {
-      el:document.querySelector(
-        '.canopy.mid'
-      ),
-      speed:0.22
+      el:
+        document.querySelector(
+          '.canopy.mid'
+        ),
+
+      speed:
+        0.22
     },
 
     {
-      el:document.querySelector(
-        '.canopy.front'
-      ),
-      speed:0.34
+      el:
+        document.querySelector(
+          '.canopy.front'
+        ),
+
+      speed:
+        0.34
     }
 
   ];
 
 
+  /*
+    Mengecek apakah pengguna meminta agar animasi
+    gerakan dikurangi.
+  */
 
-  // Mengecek apakah pengguna mematikan animasi
   const reduceMotion =
     window.matchMedia(
       '(prefers-reduced-motion: reduce)'
     ).matches;
 
 
+  /*
+    Jika pengguna tidak mengurangi gerakan,
+    jalankan efek parallax.
+  */
 
-  // Menjalankan parallax jika animasi tidak dimatikan
-  if (!reduceMotion) {
+  if(!reduceMotion){
 
     window.addEventListener(
       'scroll',
       () => {
 
+
         const y =
           window.scrollY;
 
 
-        layers.forEach(layer => {
+        layers.forEach(
+          layer => {
 
-          if (layer.el) {
 
-            layer.el.style.transform =
-              `translateY(${y * layer.speed}px)`;
+            /*
+              Menggeser setiap lapisan berdasarkan
+              kecepatan masing-masing.
+            */
+
+            if(layer.el){
+
+              layer.el.style.transform =
+                `translateY(${y * layer.speed}px)`;
+
+            }
 
           }
-
-        });
+        );
 
       },
       {
-        passive:true
+        passive: true
       }
     );
 
   }
 
 
+  /* =========================================================
+     BAGIAN 7 — MEMBUAT KUNANG-KUNANG
 
-  // =====================================================
-  // MEMBUAT EFEK KUNANG-KUNANG SECARA OTOMATIS
-  // =====================================================
+     Kunang-kunang dibuat secara otomatis menggunakan
+     JavaScript sehingga jumlah dan posisi setiap kunang-
+     kunang berbeda-beda.
+     ========================================================= */
 
-  if (!reduceMotion) {
+  if(!reduceMotion){
+
 
     const field =
       document.getElementById(
@@ -935,20 +2295,31 @@
       );
 
 
-    // Jumlah kunang-kunang berbeda untuk komputer dan HP
+    /*
+      Pada layar kecil jumlah kunang-kunang dikurangi
+      agar performa tetap ringan.
+    */
+
     const count =
       window.innerWidth < 700
         ? 10
         : 22;
 
 
+    /*
+      Membuat kunang-kunang satu per satu.
+    */
 
-    // Membuat kunang-kunang satu per satu
-    for (
+    for(
       let i = 0;
       i < count;
       i++
-    ) {
+    ){
+
+
+      /*
+        Membuat elemen span baru untuk satu kunang-kunang.
+      */
 
       const f =
         document.createElement(
@@ -956,42 +2327,69 @@
         );
 
 
+      /*
+        Memberikan class agar tampilan dan animasinya
+        diatur melalui CSS.
+      */
+
       f.className =
         'firefly';
 
 
+      /*
+        Menentukan posisi awal secara acak.
+      */
 
-      // Menentukan posisi awal secara acak
       const startX =
         Math.random() * 100;
+
 
       const startY =
         40 +
         Math.random() * 60;
 
 
+      /*
+        Menentukan arah gerakan horizontal secara acak.
+      */
 
-      // Menentukan arah gerakan secara acak
       const dx =
-        (Math.random() - 0.5) * 220;
+        (Math.random() - 0.5) *
+        220;
+
+
+      /*
+        Menentukan arah gerakan vertikal ke atas.
+      */
 
       const dy =
-        -(60 + Math.random() * 160);
+        -(
+          60 +
+          Math.random() * 160
+        );
 
 
+      /*
+        Menentukan lama gerakan.
+      */
 
-      // Menentukan lama animasi
       const dur =
-        8 + Math.random() * 10;
+        8 +
+        Math.random() * 10;
 
 
-      // Menentukan waktu mulai secara acak
+      /*
+        Menentukan waktu mulai animasi.
+      */
+
       const delay =
         Math.random() * 10;
 
 
+      /*
+        Menempatkan kunang-kunang pada posisi awal.
+      */
 
-      // Mengatur posisi kunang-kunang
       f.style.left =
         startX + '%';
 
@@ -999,12 +2397,15 @@
         startY + '%';
 
 
+      /*
+        Menyimpan arah gerakan ke CSS variable.
+      */
 
-      // Mengatur arah gerakan
       f.style.setProperty(
         '--dx',
         dx + 'px'
       );
+
 
       f.style.setProperty(
         '--dy',
@@ -1012,32 +2413,44 @@
       );
 
 
+      /*
+        Mengatur dua animasi:
+        1. Gerakan kunang-kunang.
+        2. Efek cahaya yang berkedip.
+      */
 
-      // Mengatur lama animasi
       f.style.animationDuration =
         dur + 's, ' +
-        (2.6 + Math.random() * 2) +
+        (
+          2.6 +
+          Math.random() * 2
+        ) +
         's';
 
 
+      /*
+        Mengatur waktu mulai kedua animasi.
+      */
 
-      // Mengatur waktu mulai animasi
       f.style.animationDelay =
         delay + 's, ' +
         delay + 's';
 
 
+      /*
+        Memasukkan kunang-kunang ke dalam bagian
+        fireflies pada halaman.
+      */
 
-      // Memasukkan kunang-kunang ke halaman
       field.appendChild(f);
 
     }
 
   }
 
+
 </script>
 
 
 </body>
 </html>
-```
