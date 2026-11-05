@@ -45,3 +45,5 @@ Jika Anda tertarik untuk berkolaborasi atau sekadar menyapa, silakan hubungi say
 
 ---
 Made with ❤️ by Andi Hadi.
+
+sori ada anomali di bawahnya
